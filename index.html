@@ -197,20 +197,21 @@ footer{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border);font-
   <a href="#skills"><span class="nn">2</span> Skills &amp; CLI</a>
   <a href="#tokens"><span class="nn">3</span> Token strategy</a>
   <a href="#telos"><span class="nn">4</span> TELOS prompt</a>
-  <a href="#projects"><span class="nn">5</span> Projects &amp; artifacts</a>
-  <a href="#tips"><span class="nn">6</span> Pro tips</a>
+  <a href="#pai-install"><span class="nn">5</span> PAI install</a>
+  <a href="#projects"><span class="nn">6</span> Projects &amp; artifacts</a>
+  <a href="#tips"><span class="nn">7</span> Pro tips</a>
 
   <div class="ns">Obsidian Setup</div>
-  <a href="#install"><span class="nn">7</span> Install</a>
-  <a href="#vault"><span class="nn">8</span> Create vault</a>
-  <a href="#structure"><span class="nn">9</span> Folder structure</a>
-  <a href="#settings"><span class="nn">10</span> Core settings</a>
-  <a href="#core-plugins"><span class="nn">11</span> Core plugins</a>
-  <a href="#community"><span class="nn">12</span> Community plugins</a>
-  <a href="#mcp"><span class="nn">13</span> MCP integration</a>
-  <a href="#hotkeys"><span class="nn">14</span> Hotkeys</a>
-  <a href="#workflow"><span class="nn">15</span> Daily workflow</a>
-  <a href="#themes"><span class="nn">16</span> Themes</a>
+  <a href="#install"><span class="nn">8</span> Install</a>
+  <a href="#vault"><span class="nn">9</span> Create vault</a>
+  <a href="#structure"><span class="nn">10</span> Folder structure</a>
+  <a href="#settings"><span class="nn">11</span> Core settings</a>
+  <a href="#core-plugins"><span class="nn">12</span> Core plugins</a>
+  <a href="#community"><span class="nn">13</span> Community plugins</a>
+  <a href="#mcp"><span class="nn">14</span> MCP integration</a>
+  <a href="#hotkeys"><span class="nn">15</span> Hotkeys</a>
+  <a href="#workflow"><span class="nn">16</span> Daily workflow</a>
+  <a href="#themes"><span class="nn">17</span> Themes</a>
   <a href="#checklist"><span class="nn">✓</span> Checklist</a>
 </nav>
 
@@ -228,6 +229,7 @@ footer{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border);font-
     <a href="#skills" class="pill">Skills &amp; CLI</a>
     <a href="#tokens" class="pill">Token strategy</a>
     <a href="#telos" class="pill">TELOS</a>
+    <a href="#pai-install" class="pill">PAI install</a>
     <a href="#projects" class="pill">Projects &amp; artifacts</a>
     <a href="#install" class="pill">macOS</a>
     <a href="#install" class="pill">Windows 11</a>
@@ -545,8 +547,182 @@ ready to paste into a Claude Project system prompt.</code><span class="lt">promp
 </section>
 
 <!-- SECTION 5 — PROJECTS & ARTIFACTS -->
+<!-- SECTION 5 — PAI INSTALL -->
+<section id="pai-install">
+  <h2><span class="num">5</span> Installing PAI (Personal AI Infrastructure)</h2>
+  <p>PAI is an open-source framework that turns Claude Code into a personalized AI operating system — persistent memory, custom skills, voice notifications, a life dashboard, and the TELOS interview system. Two paths to install.</p>
+
+  <div class="tgrid" style="margin-bottom:1.5rem;">
+    <div class="tc tc-a">
+      <div class="tcb">Path A — Installer Script</div>
+      <div class="tct">9-step interactive wizard</div>
+      <div class="tcd">Run <code>install.sh</code> in Terminal. GUI on macOS, CLI mode in headless/SSH environments. Installs Bun, Claude Code, Pulse (voice + dashboard), and generates your identity config. macOS only for the full feature set.</div>
+    </div>
+    <div class="tc tc-b">
+      <div class="tcb">Path B — Claude Code</div>
+      <div class="tct">Let Code handle the install</div>
+      <div class="tcd">Paste the install prompt into Claude Code. Claude runs the script in CLI mode, reports progress in-chat, then interviews you for TELOS immediately after. Preferred if you're already in Claude Code. No Pulse menu bar or GUI.</div>
+    </div>
+  </div>
+
+  <h3>Path A — Installer Script (macOS)</h3>
+  <div class="step"><div class="sn">1</div><div class="sb"><strong>Prerequisites</strong> — Homebrew and Node must already be installed (Section 8). Claude Code is optional — the installer adds it if missing.</div></div>
+  <div class="step"><div class="sn">2</div><div class="sb"><strong>Clone and run</strong>
+    <pre style="margin:8px 0 0;"><code>git clone https://github.com/danielmiessler/PAI.git ~/.claude
+cd ~/.claude && bash install.sh</code><span class="lt">bash</span></pre>
+  </div></div>
+  <div class="step"><div class="sn">3</div><div class="sb"><strong>Follow the 9-step wizard.</strong> The table below maps every prompt to a suggested answer.</div></div>
+
+  <h4 style="margin-top:1.25rem;">Wizard prompt guide</h4>
+  <div style="overflow-x:auto;margin-bottom:1rem;">
+  <table>
+    <tr><th>Step</th><th>Prompt</th><th>Suggested answer</th></tr>
+    <tr>
+      <td><strong>1 — Detect</strong></td>
+      <td>Fresh install: auto-detects, no prompt. Reinstall: "How much of old install to read?"</td>
+      <td>Reinstall → <strong>Yes — full scan and migrate USER content</strong></td>
+    </tr>
+    <tr>
+      <td><strong>2 — Prerequisites</strong></td>
+      <td colspan="2">Auto-installs Bun, Git, Claude Code if missing. No prompt.</td>
+    </tr>
+    <tr>
+      <td><strong>3 — API Keys</strong></td>
+      <td colspan="2">Auto-completes. Keys are collected in Voice Setup (Step 7) instead.</td>
+    </tr>
+    <tr>
+      <td rowspan="6"><strong>4 — Identity</strong></td>
+      <td>"What is your first name?"</td>
+      <td>Your first name (e.g. <em>Eric</em>)</td>
+    </tr>
+    <tr>
+      <td>"Detected timezone: America/New_York. Press Enter to confirm."</td>
+      <td>Press <kbd>Enter</kbd> if correct, or type your TZ (e.g. <em>America/Chicago</em>)</td>
+    </tr>
+    <tr>
+      <td>"Temperature unit? F or C"</td>
+      <td><strong>F</strong> — US operations default</td>
+    </tr>
+    <tr>
+      <td>"What would you like to name your AI assistant?"</td>
+      <td>Pick a name — this is your DA. Examples: <em>Atlas, Nova, Sage, Hyzer</em>. It sticks.</td>
+    </tr>
+    <tr>
+      <td>"Startup catchphrase for [DA Name]?"</td>
+      <td>Press <kbd>Enter</kbd> to accept the default, or write something short. Optional flavor.</td>
+    </tr>
+    <tr>
+      <td>"Projects directory (optional, press Enter to skip):"</td>
+      <td><em>~/GitHub</em> or <em>~/Projects</em> — or press <kbd>Enter</kbd> to skip</td>
+    </tr>
+    <tr>
+      <td><strong>5 — Repository</strong></td>
+      <td colspan="2">Auto-copies PAI file tree to <code>~/.claude</code>. No prompt.</td>
+    </tr>
+    <tr>
+      <td><strong>6 — Configuration</strong></td>
+      <td colspan="2">Auto-generates <code>settings.json</code>, identity files, and <code>pai</code> shell alias. No prompt.</td>
+    </tr>
+    <tr>
+      <td rowspan="5"><strong>7 — Voice</strong></td>
+      <td>"Look in backup directories for existing ElevenLabs voice IDs and API keys?"</td>
+      <td>Fresh install → <strong>No — start completely fresh</strong>. Reinstall → <strong>Yes — scan and confirm</strong></td>
+    </tr>
+    <tr>
+      <td>"Voice requires an ElevenLabs API key."</td>
+      <td>Have a key → <strong>I have a key — let me enter it</strong> → paste <em>sk_...</em><br>No key → <strong>Skip voice for now</strong> (add to <code>~/.config/PAI/.env</code> later)</td>
+    </tr>
+    <tr>
+      <td>"Install Pulse as a system launchd service?"</td>
+      <td><strong>Yes — install Pulse (recommended)</strong>. Starts on login, hosts voice + dashboard at <em>localhost:31337</em>.</td>
+    </tr>
+    <tr>
+      <td>"Install the Pulse menu bar app?"</td>
+      <td><strong>Yes</strong> if you want a menu bar indicator. Skip to keep Pulse headless.</td>
+    </tr>
+    <tr>
+      <td>"Digital Assistant Voice — Pick the voice your DA speaks with:"</td>
+      <td>6 built-in voices with live preview (if Pulse is running). Or skip and change later in <code>~/.claude/settings.json</code>.</td>
+    </tr>
+    <tr>
+      <td><strong>8 — Telegram</strong></td>
+      <td>"Set up Telegram bot integration?"</td>
+      <td><strong>Skip</strong> unless you need mobile push notifications. Add later via <code>/telegram</code> skill.</td>
+    </tr>
+    <tr>
+      <td><strong>9 — Validation</strong></td>
+      <td colspan="2">Auto-runs checks. No prompt.</td>
+    </tr>
+  </table>
+  </div>
+
+  <div class="step"><div class="sn">4</div><div class="sb"><strong>Launch PAI and run /interview for TELOS</strong>
+    <pre style="margin:8px 0 0;"><code>source ~/.zshrc && pai</code><span class="lt">bash</span></pre>
+    Then type <code>/interview</code> in the chat. Your DA walks through T/E/L/O/S one question at a time. Copy the output into your Claude Project system prompt.
+  </div></div>
+
+  <h3 style="margin-top:2rem;">Path B — Claude Code (preferred for Code users)</h3>
+  <p>Open Claude Code in any directory and paste this. Claude runs the installer in CLI mode and immediately interviews you for TELOS on completion.</p>
+  <pre><code>Install PAI for me using these steps:
+
+1. Check if ~/.claude already has PAI installed
+   (look for ~/.claude/PAI/ALGORITHM/LATEST).
+   If found, ask me whether to upgrade or skip.
+
+2. If not installed:
+   git clone https://github.com/danielmiessler/PAI.git ~/.claude
+   cd ~/.claude && bash install.sh --mode cli
+
+3. Report the output of each step.
+   When install completes, run: source ~/.zshrc
+
+4. Then interview me for a TELOS prompt — one question at a time:
+   - My role, title, and organization type
+   - Number of facilities and how they are organized
+   - Key systems (WMS, TMS, ERP, network/IT tools)
+   - Primary Claude use cases (writing, analysis, automation, IT)
+   - Tone and format preferences (concise vs detailed, plain vs technical)
+   - Non-negotiables: things Claude should always or never do
+
+5. Output the completed TELOS in a markdown code block
+   with T / E / L / O / S headers,
+   ready to paste into a Claude Project system prompt.</code><span class="lt">prompt</span></pre>
+
+  <h3 style="margin-top:2rem;">Complications — know before you start</h3>
+  <div class="g2">
+    <div class="card a" style="border-left:3px solid #f59e0b;">
+      <div class="ct">Path A — Installer issues</div>
+      <div class="cb">
+        <ul>
+          <li><strong>macOS only</strong> for the full experience. Linux works in CLI mode; Windows is not supported.</li>
+          <li><strong>New terminals need <code>source ~/.zshrc</code></strong> — the <code>pai</code> alias and bun PATH are written to your shell config but only activate in new sessions.</li>
+          <li><strong>Voice costs money.</strong> ElevenLabs free tier is very limited; the Starter plan (~$5/mo) covers typical PAI usage. Without a key, voice falls back to macOS <code>say</code>.</li>
+          <li><strong>Pulse port conflict.</strong> If port 31337 is in use, Pulse won't bind and voice + dashboard fail silently. Check <code>~/.claude/PAI/PULSE/logs/pulse-stderr.log</code> if this happens.</li>
+          <li><strong>Bun PATH in non-interactive shells.</strong> Hooks run outside the interactive shell — if bun isn't in <code>/usr/local/bin</code>, hooks fail silently. The installer creates a symlink; verify with <code>which bun</code>.</li>
+          <li><strong>Reinstalling:</strong> The wizard backs up <code>~/.claude</code> to a timestamped folder first. Your USER content is preserved if you choose "full scan."</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card b" style="border-left:3px solid #3b82f6;">
+      <div class="ct">Path B — Claude Code issues</div>
+      <div class="cb">
+        <ul>
+          <li><strong>GUI installer won't run.</strong> Claude Code's Bash tool is headless — the wizard auto-selects CLI mode. That's fine; CLI mode is fully featured.</li>
+          <li><strong>Claude Code must already be installed</strong> before using Path B: <code>npm install -g @anthropic-ai/claude-code</code></li>
+          <li><strong>No Pulse menu bar app.</strong> Claude Code can install the Pulse daemon but the menu bar .app bundle needs a real Terminal session to build.</li>
+          <li><strong>No voice preview during install.</strong> The DA voice picker can't play audio from inside Claude Code. Pick any voice — change it later in <code>~/.claude/settings.json</code>.</li>
+          <li><strong>PAI runs as a CLI, not inside Claude Code.</strong> After install, launch it with <code>source ~/.zshrc &amp;&amp; pai</code> in a new terminal tab.</li>
+          <li><strong>Internet required</strong> for the initial clone unless PAI is already on disk at <code>~/.claude</code>.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="co g" style="margin-top:1rem;"><strong>After install on either path:</strong> your TELOS lives at <code>~/.claude/PAI/USER/TELOS/</code>. Paste it into Claude.ai → Projects → [Your project] → Set instructions. Refresh quarterly or after major role/tool changes.</div>
+</section>
+
 <section id="projects">
-  <h2><span class="num">5</span> Projects &amp; artifacts</h2>
+  <h2><span class="num">6</span> Projects &amp; artifacts</h2>
   <p>Projects give Claude persistent instructions and shared context. Artifacts are the outputs — rendered, downloadable, and reusable.</p>
 
   <div class="g2">
@@ -603,7 +779,7 @@ ready to paste into a Claude Project system prompt.</code><span class="lt">promp
 
 <!-- SECTION 6 — PRO TIPS -->
 <section id="tips">
-  <h2><span class="num">6</span> Pro tips</h2>
+  <h2><span class="num">7</span> Pro tips</h2>
 
   <div class="card">
     <div style="display:flex;flex-direction:column;gap:0;">
@@ -671,7 +847,7 @@ ready to paste into a Claude Project system prompt.</code><span class="lt">promp
 
 <!-- SECTION 7 — INSTALL -->
 <section id="install">
-  <h2><span class="num">7</span> Install Obsidian + Claude Desktop</h2>
+  <h2><span class="num">8</span> Install Obsidian + Claude Desktop</h2>
   <p>Both apps are needed for the full Claude-integrated workflow. Install both before setting up your vault.</p>
 
   <div class="tabs">
@@ -757,7 +933,7 @@ ready to paste into a Claude Project system prompt.</code><span class="lt">promp
 
 <!-- SECTION 8 — VAULT -->
 <section id="vault">
-  <h2><span class="num">8</span> Create your vault</h2>
+  <h2><span class="num">9</span> Create your vault</h2>
   <div class="steps">
     <div class="step"><div class="sn">1</div><div class="sb"><strong>Open Obsidian → Create new vault</strong>Name it: <span class="ic">Ops-Brain</span>, <span class="ic">3PL-Hub</span>, or your company name.</div></div>
     <div class="step"><div class="sn">2</div><div class="sb"><strong>Choose your sync location</strong>Obsidian Sync or Git recommended. Avoid iCloud for multi-device or cross-platform setups — see sync table in Section 7.</div></div>
@@ -769,7 +945,7 @@ ready to paste into a Claude Project system prompt.</code><span class="lt">promp
 
 <!-- SECTION 9 — STRUCTURE -->
 <section id="structure">
-  <h2><span class="num">9</span> Vault folder structure</h2>
+  <h2><span class="num">10</span> Vault folder structure</h2>
   <div class="tree">
 <span class="f">Your-Vault/</span>
 ├── <span class="f">00-Inbox/</span>         <span class="cm">← capture everything here first, sort later</span>
@@ -794,7 +970,7 @@ ready to paste into a Claude Project system prompt.</code><span class="lt">promp
 
 <!-- SECTION 10 — SETTINGS -->
 <section id="settings">
-  <h2><span class="num">10</span> Core settings</h2>
+  <h2><span class="num">11</span> Core settings</h2>
   <p>Open <strong>Settings</strong> (<span class="ic">Cmd+,</span> Mac / <span class="ic">Ctrl+,</span> Windows) and configure these first.</p>
   <div class="g2">
     <div class="card"><div class="ct">Files &amp; Links</div><div class="cb"><ul>
@@ -812,7 +988,7 @@ ready to paste into a Claude Project system prompt.</code><span class="lt">promp
 
 <!-- SECTION 11 — CORE PLUGINS -->
 <section id="core-plugins">
-  <h2><span class="num">11</span> Core plugins</h2>
+  <h2><span class="num">12</span> Core plugins</h2>
   <p><strong>Settings → Core plugins</strong> — all built-in, all free.</p>
   <div class="tw"><table>
     <tr><th>Plugin</th><th>What it does</th></tr>
@@ -831,7 +1007,7 @@ ready to paste into a Claude Project system prompt.</code><span class="lt">promp
 
 <!-- SECTION 12 — COMMUNITY PLUGINS -->
 <section id="community">
-  <h2><span class="num">12</span> Community plugins</h2>
+  <h2><span class="num">13</span> Community plugins</h2>
   <p><strong>Settings → Community plugins → Browse</strong>. Disable Restricted Mode when prompted.</p>
 
   <div style="margin-bottom:0.5rem;"><span class="tier t1">Tier 1 — Install immediately</span></div>
@@ -861,7 +1037,7 @@ ready to paste into a Claude Project system prompt.</code><span class="lt">promp
 
 <!-- SECTION 13 — MCP -->
 <section id="mcp">
-  <h2><span class="num">13</span> Claude MCP integration</h2>
+  <h2><span class="num">14</span> Claude MCP integration</h2>
   <p>Connects Claude directly to your vault. Requires <strong>Local REST API</strong> community plugin.</p>
 
   <div class="steps">
@@ -917,7 +1093,7 @@ code "$env:APPDATA\Claude\claude_desktop_config.json"</code><span class="lt">pow
 
 <!-- SECTION 14 — HOTKEYS -->
 <section id="hotkeys">
-  <h2><span class="num">14</span> Hotkeys</h2>
+  <h2><span class="num">15</span> Hotkeys</h2>
   <p><strong>Settings → Hotkeys</strong>. Mac = <span class="ic">Cmd</span> · Windows = <span class="ic">Ctrl</span>.</p>
   <div class="tw"><table>
     <tr><th>Action</th><th>Shortcut</th></tr>
@@ -933,7 +1109,7 @@ code "$env:APPDATA\Claude\claude_desktop_config.json"</code><span class="lt">pow
 
 <!-- SECTION 15 — WORKFLOW -->
 <section id="workflow">
-  <h2><span class="num">15</span> Daily workflow</h2>
+  <h2><span class="num">16</span> Daily workflow</h2>
   <h3>Capture → Process → Link</h3>
   <p>The most common failure with any knowledge system is friction at capture time. The fix: <strong>everything goes to Inbox first, no exceptions.</strong></p>
   <div class="g3">
@@ -962,7 +1138,7 @@ code "$env:APPDATA\Claude\claude_desktop_config.json"</code><span class="lt">pow
 
 <!-- SECTION 16 — THEMES -->
 <section id="themes">
-  <h2><span class="num">16</span> Recommended themes</h2>
+  <h2><span class="num">17</span> Recommended themes</h2>
   <p><strong>Settings → Appearance → Manage community themes</strong></p>
   <div class="g3">
     <div class="card"><div class="ct">Minimal ⭐</div><div class="cb">Best all-around. Pairs with Minimal Theme Settings plugin for granular control.</div></div>

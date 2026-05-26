@@ -16,9 +16,13 @@
 *{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:15px;line-height:1.7;}
+
+/* ── LAYOUT ── */
 .shell{display:flex;min-height:100vh;}
 nav{width:250px;flex-shrink:0;background:var(--surface);border-right:1px solid var(--border);position:sticky;top:0;height:100vh;overflow-y:auto;padding:1.5rem 0 3rem;}
 main{flex:1;max-width:860px;padding:3rem 3rem 7rem;}
+
+/* ── NAV ── */
 .nav-logo{padding:0 1.25rem 1.5rem;border-bottom:1px solid var(--border);margin-bottom:0.75rem;}
 .nav-logo .lm{font-size:18px;font-weight:700;color:var(--text);letter-spacing:-0.4px;}
 .nav-logo .ls{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:0.05em;text-transform:uppercase;}
@@ -26,6 +30,8 @@ main{flex:1;max-width:860px;padding:3rem 3rem 7rem;}
 nav a{display:flex;align-items:center;gap:8px;padding:0.32rem 1.25rem;font-size:12.5px;color:var(--muted);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;}
 nav a:hover,nav a.active{color:var(--text);background:var(--surface2);border-left-color:var(--accent);}
 .nn{font-size:10px;color:var(--border);min-width:14px;}
+
+/* ── HERO ── */
 .hero{margin-bottom:3rem;padding-bottom:2.5rem;border-bottom:1px solid var(--border);}
 .hero-badge{display:inline-flex;align-items:center;gap:6px;background:var(--surface2);border:1px solid var(--border);border-radius:20px;padding:4px 12px;font-size:12px;color:var(--muted);margin-bottom:1.25rem;}
 .hero h1{font-size:34px;font-weight:700;letter-spacing:-1px;line-height:1.15;margin-bottom:0.75rem;}
@@ -33,6 +39,8 @@ nav a:hover,nav a.active{color:var(--text);background:var(--surface2);border-lef
 .hero p{font-size:15px;color:var(--muted);max-width:580px;line-height:1.65;}
 .pills{display:flex;flex-wrap:wrap;gap:7px;margin-top:1.25rem;}
 .pill{background:var(--surface2);border:1px solid var(--border);border-radius:20px;padding:3px 11px;font-size:12px;color:var(--muted);}
+
+/* ── SECTIONS ── */
 section{margin-bottom:4rem;scroll-margin-top:2rem;}
 h2{font-size:21px;font-weight:600;letter-spacing:-0.4px;margin-bottom:1rem;color:var(--text);display:flex;align-items:center;gap:10px;}
 h2 .num{font-size:12px;font-weight:500;color:var(--muted);background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:2px 8px;white-space:nowrap;}
@@ -44,6 +52,8 @@ strong{color:var(--text);font-weight:600;}
 a{color:var(--accent);text-decoration:none;}
 a:hover{text-decoration:underline;}
 em{color:var(--muted);font-style:italic;}
+
+/* ── TABS (OS) ── */
 .tabs{display:flex;border-bottom:1px solid var(--border);margin-bottom:0;}
 .tab{padding:7px 18px;font-size:13px;font-weight:500;cursor:pointer;border:none;border-bottom:2px solid transparent;margin-bottom:-1px;color:var(--muted);background:none;font-family:var(--font);transition:all 0.15s;}
 .tab.active{color:var(--accent2);border-bottom-color:var(--accent2);}
@@ -51,6 +61,8 @@ em{color:var(--muted);font-style:italic;}
 .tab:hover{color:var(--text);}
 .tp{display:none;padding-top:1.25rem;}
 .tp.active{display:block;}
+
+/* ── CARDS ── */
 .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem 1.5rem;margin-bottom:1rem;}
 .card.feat{border:2px solid var(--accent);background:rgba(91,138,245,0.04);}
 .card.g{border-left:3px solid var(--accent2);}
@@ -62,6 +74,8 @@ em{color:var(--muted);font-style:italic;}
 .cb{font-size:13px;color:var(--muted);line-height:1.6;}
 .cb ul{padding-left:1.2rem;margin-top:0.5rem;}
 .cb li{margin-bottom:4px;}
+
+/* ── MODEL CARDS ── */
 .model-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin:1rem 0;}
 .mcard{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem;}
 .mcard.featured{border-color:var(--accent);background:rgba(91,138,245,0.05);}
@@ -79,6 +93,8 @@ em{color:var(--muted);font-style:italic;}
 .mlist li{margin-bottom:3px;}
 .mex{background:var(--code-bg);border-radius:6px;padding:8px 10px;margin-top:8px;font-size:11.5px;color:var(--muted);border-left:2px solid var(--border);line-height:1.5;}
 .mex .exl{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:var(--border);margin-bottom:3px;}
+
+/* ── DECISION FLOW ── */
 .flow{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:6px 0;}
 .fp{background:var(--surface2);border:1px solid var(--border);border-radius:20px;padding:4px 13px;font-size:12px;font-weight:500;color:var(--text);white-space:nowrap;}
 .fa{color:var(--muted);font-size:13px;}
@@ -88,26 +104,38 @@ em{color:var(--muted);font-style:italic;}
 .fp.ans-code{background:rgba(245,166,35,0.12);color:var(--accent3);border-color:rgba(245,166,35,0.3);}
 .fp.ans-cw{background:rgba(140,100,220,0.12);color:#b07ef5;border-color:rgba(140,100,220,0.3);}
 .fp.ans-design{background:rgba(224,92,138,0.12);color:#f07ab0;border-color:rgba(224,92,138,0.3);}
+
+/* ── TOKEN / SKILL CARDS ── */
 .g2{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1rem;margin:0.75rem 0;}
 .g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin:0.75rem 0;}
+
+/* ── CODE ── */
 pre{background:var(--code-bg);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;overflow-x:auto;margin:0.75rem 0;position:relative;}
 code{font-family:var(--mono);font-size:12.5px;color:#c9d1d9;}
 .lt{position:absolute;top:7px;right:9px;font-family:var(--mono);font-size:9.5px;color:var(--muted);background:var(--surface);padding:1px 6px;border-radius:4px;border:1px solid var(--border);}
 .ic{font-family:var(--mono);font-size:12px;background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:1px 6px;color:#a8d8b9;}
+
+/* ── TABLE ── */
 .tw{overflow-x:auto;margin:0.75rem 0;}
 table{width:100%;border-collapse:collapse;font-size:13px;}
 th{text-align:left;padding:7px 11px;background:var(--surface2);color:var(--muted);font-weight:500;font-size:10.5px;text-transform:uppercase;letter-spacing:0.05em;border-bottom:1px solid var(--border);}
 td{padding:8px 11px;border-bottom:1px solid var(--border);color:var(--muted);vertical-align:top;}
 td strong{color:var(--text);}
 tr:last-child td{border-bottom:none;}
+
+/* ── CALLOUT ── */
 .co{background:var(--surface2);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:8px;padding:0.8rem 1.2rem;margin:0.75rem 0;font-size:13px;color:var(--muted);}
 .co.g{border-left-color:var(--accent2);}
 .co.a{border-left-color:var(--accent3);}
+
+/* ── STEPS ── */
 .steps{margin:0.75rem 0;}
 .step{display:flex;gap:14px;margin-bottom:1rem;}
 .sn{width:26px;height:26px;border-radius:50%;background:var(--accent);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
 .sb{flex:1;font-size:13px;color:var(--muted);}
 .sb strong{color:var(--text);display:block;margin-bottom:4px;}
+
+/* ── TELOS ── */
 .tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1rem;margin:1rem 0;}
 .tc{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem;transition:border-color 0.15s;}
 .tc:hover{border-color:var(--accent);}
@@ -117,13 +145,19 @@ tr:last-child td{border-bottom:none;}
 .tc-c .tcb{background:rgba(245,166,35,0.12);color:var(--accent3);}
 .tct{font-size:13px;font-weight:600;color:var(--text);margin-bottom:0.35rem;}
 .tcd{font-size:12px;color:var(--muted);line-height:1.5;}
+
+/* ── PLUGIN TIERS ── */
 .tier{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;padding:3px 10px;border-radius:20px;display:inline-block;margin-bottom:0.75rem;}
 .t1{background:rgba(62,207,142,0.1);color:var(--accent2);border:1px solid rgba(62,207,142,0.25);}
 .t2{background:rgba(91,138,245,0.1);color:var(--accent);border:1px solid rgba(91,138,245,0.25);}
 .t3{background:rgba(245,166,35,0.1);color:var(--accent3);border:1px solid rgba(245,166,35,0.25);}
+
+/* ── TREE ── */
 .tree{font-family:var(--mono);font-size:12.5px;color:#c9d1d9;background:var(--code-bg);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;line-height:1.9;}
 .tree .f{color:var(--accent);}
 .tree .cm{color:var(--muted);}
+
+/* ── CHECKLIST ── */
 .cl{list-style:none;padding:0;}
 .cl li{display:flex;align-items:flex-start;gap:10px;padding:7px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--muted);}
 .cl li:last-child{border-bottom:none;}
@@ -132,15 +166,30 @@ tr:last-child td{border-bottom:none;}
 .chk.done::after{content:'✓';font-size:10px;color:#0f1117;font-weight:700;}
 .cl li.di{text-decoration:line-through;opacity:0.45;}
 .cg{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:var(--muted);margin:1.5rem 0 0.5rem;padding-bottom:4px;border-bottom:1px solid var(--border);}
+
+/* ── SYNC REC ── */
 .rec{background:rgba(62,207,142,0.1);border:1px solid rgba(62,207,142,0.2);color:var(--accent2);font-size:9px;font-weight:700;padding:2px 6px;border-radius:4px;text-transform:uppercase;letter-spacing:0.05em;}
+
+/* ── FOOTER ── */
 footer{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border);font-size:12px;color:var(--muted);}
-@media(max-width:768px){nav{display:none;}main{padding:2rem 1.25rem 4rem;}h2{font-size:18px;}}
+
+@media(max-width:768px){
+  nav{display:none;}
+  main{padding:2rem 1.25rem 4rem;}
+  h2{font-size:18px;}
+}
 </style>
 </head>
 <body>
 <div class="shell">
+
+<!-- ════════ SIDEBAR ════════ -->
 <nav id="sidebar">
-  <div class="nav-logo"><div class="lm">Claude + Obsidian</div><div class="ls">Operations Field Guide</div></div>
+  <div class="nav-logo">
+    <div class="lm">Claude + Obsidian</div>
+    <div class="ls">Operations Field Guide</div>
+  </div>
+
   <div class="ns">Claude Fundamentals</div>
   <a href="#models"><span class="nn">1</span> Models &amp; agents</a>
   <a href="#skills"><span class="nn">2</span> Skills &amp; CLI</a>
@@ -148,6 +197,7 @@ footer{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border);font-
   <a href="#telos"><span class="nn">4</span> TELOS prompt</a>
   <a href="#projects"><span class="nn">5</span> Projects &amp; artifacts</a>
   <a href="#tips"><span class="nn">6</span> Pro tips</a>
+
   <div class="ns">Obsidian Setup</div>
   <a href="#install"><span class="nn">7</span> Install</a>
   <a href="#vault"><span class="nn">8</span> Create vault</a>
@@ -161,51 +211,302 @@ footer{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border);font-
   <a href="#themes"><span class="nn">16</span> Themes</a>
   <a href="#checklist"><span class="nn">✓</span> Checklist</a>
 </nav>
+
+<!-- ════════ MAIN ════════ -->
 <main>
+
+<!-- HERO -->
 <div class="hero">
   <div class="hero-badge">📦 3PL &amp; Operations Management Edition</div>
   <h1>Claude + Obsidian<br><em>Operations Field Guide</em></h1>
   <p>Everything in one place — which Claude model and agent to use, how to manage tokens and context, building your TELOS, and setting up Obsidian as your persistent knowledge base alongside Claude.</p>
-  <div class="pills"><span class="pill">Models &amp; agents</span><span class="pill">Claude Design</span><span class="pill">Skills &amp; CLI</span><span class="pill">Token strategy</span><span class="pill">TELOS</span><span class="pill">Projects &amp; artifacts</span><span class="pill">macOS</span><span class="pill">Windows 11</span><span class="pill">MCP integration</span></div>
+  <div class="pills">
+    <span class="pill">Models &amp; agents</span>
+    <span class="pill">Claude Design</span>
+    <span class="pill">Skills &amp; CLI</span>
+    <span class="pill">Token strategy</span>
+    <span class="pill">TELOS</span>
+    <span class="pill">Projects &amp; artifacts</span>
+    <span class="pill">macOS</span>
+    <span class="pill">Windows 11</span>
+    <span class="pill">MCP integration</span>
+  </div>
 </div>
+
+<!-- ══════════════════════════════
+     PART 1 — CLAUDE FUNDAMENTALS
+     ══════════════════════════════ -->
+
+<!-- SECTION 1 — MODELS & AGENTS -->
 <section id="models">
   <h2><span class="num">1</span> Models &amp; agents — use the right tool</h2>
   <p>Matching the model or agent to the task is the single biggest performance gain available. Each has a distinct strength profile.</p>
+
   <h3>Models</h3>
   <div class="model-grid">
-    <div class="mcard featured"><div><span class="mtag tag-opus">Opus</span></div><div class="mname">Claude Opus</div><div class="msub">Deep reasoning · use when depth &gt; speed</div><ul class="mlist"><li>System architecture &amp; design decisions</li><li>Multi-step reasoning chains</li><li>Complex code review &amp; refactoring</li><li>Legal, financial &amp; compliance synthesis</li><li>Ambiguous, open-ended analysis</li></ul><div class="mex"><div class="exl">Example</div>"Design a multi-site WAN topology for 6 warehouse locations with failover, segmented VLANs per function, and road-warrior VPN access."</div></div>
-    <div class="mcard"><div><span class="mtag tag-sonnet">Sonnet</span></div><div class="mname">Claude Sonnet</div><div class="msub">Everyday excellence · best all-round balance</div><ul class="mlist"><li>Writing, editing, summarizing</li><li>Code generation &amp; debugging</li><li>Research synthesis &amp; reports</li><li>Most day-to-day ops tasks</li><li>Default model for agentic loops</li></ul><div class="mex"><div class="exl">Example</div>"Draft a carrier rate increase response email. Professional tone, firm but open to negotiation."</div></div>
-    <div class="mcard"><div><span class="mtag tag-haiku">Haiku</span></div><div class="mname">Claude Haiku</div><div class="msub">Speed &amp; volume · fast, cheap, high-throughput</div><ul class="mlist"><li>Classification &amp; tagging at scale</li><li>Routing logic in agentic pipelines</li><li>Short-form content generation</li><li>First-pass drafts before Opus review</li><li>Cost-sensitive API integrations</li></ul><div class="mex"><div class="exl">Example</div>"Classify each of these 300 support tickets as billing / carrier / WMS / general. Return JSON only."</div></div>
+    <div class="mcard featured">
+      <div><span class="mtag tag-opus">Opus</span></div>
+      <div class="mname">Claude Opus</div>
+      <div class="msub">Deep reasoning · use when depth &gt; speed</div>
+      <ul class="mlist">
+        <li>System architecture &amp; design decisions</li>
+        <li>Multi-step reasoning chains</li>
+        <li>Complex code review &amp; refactoring</li>
+        <li>Legal, financial &amp; compliance synthesis</li>
+        <li>Ambiguous, open-ended analysis</li>
+      </ul>
+      <div class="mex"><div class="exl">Example</div>"Design a multi-site WAN topology for 6 warehouse locations with failover, segmented VLANs per function, and road-warrior VPN access."</div>
+    </div>
+    <div class="mcard">
+      <div><span class="mtag tag-sonnet">Sonnet</span></div>
+      <div class="mname">Claude Sonnet</div>
+      <div class="msub">Everyday excellence · best all-round balance</div>
+      <ul class="mlist">
+        <li>Writing, editing, summarizing</li>
+        <li>Code generation &amp; debugging</li>
+        <li>Research synthesis &amp; reports</li>
+        <li>Most day-to-day ops tasks</li>
+        <li>Default model for agentic loops</li>
+      </ul>
+      <div class="mex"><div class="exl">Example</div>"Draft a carrier rate increase response email. Professional tone, firm but open to negotiation."</div>
+    </div>
+    <div class="mcard">
+      <div><span class="mtag tag-haiku">Haiku</span></div>
+      <div class="mname">Claude Haiku</div>
+      <div class="msub">Speed &amp; volume · fast, cheap, high-throughput</div>
+      <ul class="mlist">
+        <li>Classification &amp; tagging at scale</li>
+        <li>Routing logic in agentic pipelines</li>
+        <li>Short-form content generation</li>
+        <li>First-pass drafts before Opus review</li>
+        <li>Cost-sensitive API integrations</li>
+      </ul>
+      <div class="mex"><div class="exl">Example</div>"Classify each of these 300 support tickets as billing / carrier / WMS / general. Return JSON only."</div>
+    </div>
   </div>
+
   <h3>Agents</h3>
   <div class="model-grid">
-    <div class="mcard"><div><span class="mtag tag-code">Claude Code</span></div><div class="mname">Claude Code</div><div class="msub">Terminal-native · reads and writes real files</div><ul class="mlist"><li>Build multi-file projects from a spec</li><li>Read, refactor, and commit codebases</li><li>Run bash, tests, install packages</li><li>Install &amp; configure MCP servers</li><li>Manage git commits and PRs</li></ul><div class="mex"><div class="exl">Example</div>"Scaffold a Django scheduling app with Gmail SMTP. Create a CLAUDE.md with project conventions and push an initial commit."</div></div>
-    <div class="mcard"><div><span class="mtag tag-coworker">Coworker</span></div><div class="mname">Coworker <em style="font-size:10px;font-weight:400;">(beta)</em></div><div class="msub">Desktop automation · no code required</div><ul class="mlist"><li>File &amp; folder management on your desktop</li><li>Browser-driven form filling</li><li>Multi-app workflows without scripting</li><li>Repeated operations on local files</li></ul><div class="mex"><div class="exl">Example</div>"Rename all invoices in this folder to YYYY-MM-DD-Vendor format and move them to /Accounting/2026."</div></div>
-    <div class="mcard"><div><span class="mtag tag-chrome">Claude in Chrome</span></div><div class="mname">Browser agent <em style="font-size:10px;font-weight:400;">(beta)</em></div><div class="msub">See and act on any webpage</div><ul class="mlist"><li>Web research &amp; data extraction</li><li>Portal navigation &amp; form filling</li><li>Price comparison across sites</li><li>Pulling live data into context</li></ul><div class="mex"><div class="exl">Example</div>"Open the carrier portal, pull all active loads from the last 7 days, and paste them into a summary table."</div></div>
-    <div class="mcard"><div><span class="mtag tag-design">Claude Design</span></div><div class="mname">Claude Design <em style="font-size:10px;font-weight:400;">(research preview)</em></div><div class="msub">Prompt → prototype · powered by Opus 4.7</div><ul class="mlist"><li>Turn text prompts into interactive prototypes</li><li>Pitch decks, slides, UI mockups, one-pagers</li><li>Auto-builds a design system from your brand assets</li><li>Multiplayer — team edits in real time</li><li>Handoff to Claude Code for production build</li></ul><div class="mex"><div class="exl">Example</div>"Create an interactive dashboard mockup for our warehouse KPIs — inbound volume, dock utilization, and on-time shipping rate. Match our brand colors."</div><div class="mex" style="margin-top:6px;border-left-color:var(--accent4);"><div class="exl">Access</div>Available to Claude Pro, Max, Team &amp; Enterprise subscribers. Lives inside claude.ai — palette icon in the left sidebar. Not available on the free tier.</div></div>
+    <div class="mcard">
+      <div><span class="mtag tag-code">Claude Code</span></div>
+      <div class="mname">Claude Code</div>
+      <div class="msub">Terminal-native · reads and writes real files</div>
+      <ul class="mlist">
+        <li>Build multi-file projects from a spec</li>
+        <li>Read, refactor, and commit codebases</li>
+        <li>Run bash, tests, install packages</li>
+        <li>Install &amp; configure MCP servers</li>
+        <li>Manage git commits and PRs</li>
+      </ul>
+      <div class="mex"><div class="exl">Example</div>"Scaffold a Django scheduling app with Gmail SMTP. Create a CLAUDE.md with project conventions and push an initial commit."</div>
+    </div>
+    <div class="mcard">
+      <div><span class="mtag tag-coworker">Coworker</span></div>
+      <div class="mname">Coworker <em style="font-size:10px;font-weight:400;">(beta)</em></div>
+      <div class="msub">Desktop automation · no code required</div>
+      <ul class="mlist">
+        <li>File &amp; folder management on your desktop</li>
+        <li>Browser-driven form filling</li>
+        <li>Multi-app workflows without scripting</li>
+        <li>Repeated operations on local files</li>
+      </ul>
+      <div class="mex"><div class="exl">Example</div>"Rename all invoices in this folder to YYYY-MM-DD-Vendor format and move them to /Accounting/2026."</div>
+    </div>
+    <div class="mcard">
+      <div><span class="mtag tag-chrome">Claude in Chrome</span></div>
+      <div class="mname">Browser agent <em style="font-size:10px;font-weight:400;">(beta)</em></div>
+      <div class="msub">See and act on any webpage</div>
+      <ul class="mlist">
+        <li>Web research &amp; data extraction</li>
+        <li>Portal navigation &amp; form filling</li>
+        <li>Price comparison across sites</li>
+        <li>Pulling live data into context</li>
+      </ul>
+      <div class="mex"><div class="exl">Example</div>"Open the carrier portal, pull all active loads from the last 7 days, and paste them into a summary table."</div>
+    </div>
+    <div class="mcard">
+      <div><span class="mtag tag-design">Claude Design</span></div>
+      <div class="mname">Claude Design <em style="font-size:10px;font-weight:400;">(research preview)</em></div>
+      <div class="msub">Prompt → prototype · powered by Opus 4.7</div>
+      <ul class="mlist">
+        <li>Turn text prompts into interactive prototypes</li>
+        <li>Pitch decks, slides, UI mockups, one-pagers</li>
+        <li>Auto-builds a design system from your brand assets</li>
+        <li>Multiplayer — team edits in real time</li>
+        <li>Handoff to Claude Code for production build</li>
+      </ul>
+      <div class="mex"><div class="exl">Example</div>"Create an interactive dashboard mockup for our warehouse KPIs — inbound volume, dock utilization, and on-time shipping rate. Match our brand colors."</div>
+      <div class="mex" style="margin-top:6px;border-left-color:var(--accent4);"><div class="exl">Access</div>Available to Claude Pro, Max, Team &amp; Enterprise subscribers. Lives inside claude.ai — palette icon in the left sidebar. Not available on the free tier.</div>
+    </div>
+
+    </div>
   </div>
+
   <h3>Decision flow</h3>
-  <div class="card" style="margin-top:0;"><div class="flow"><span class="fp">Complex architecture or deep analysis?</span><span class="fa">→</span><span class="fp ans-opus">Opus</span></div><div class="flow"><span class="fp">Build real files, scripts, or a codebase?</span><span class="fa">→</span><span class="fp ans-code">Claude Code</span></div><div class="flow"><span class="fp">Prototype, mockup, deck, or visual?</span><span class="fa">→</span><span class="fp ans-design">Claude Design</span></div><div class="flow"><span class="fp">Desktop tasks, no code needed?</span><span class="fa">→</span><span class="fp ans-cw">Coworker</span></div><div class="flow"><span class="fp">Writing, research, day-to-day ops?</span><span class="fa">→</span><span class="fp ans-sonnet">Sonnet (default)</span></div><div class="flow"><span class="fp">High volume, classification, routing?</span><span class="fa">→</span><span class="fp ans-haiku">Haiku</span></div></div>
+  <div class="card" style="margin-top:0;">
+    <div class="flow"><span class="fp">Complex architecture or deep analysis?</span><span class="fa">→</span><span class="fp ans-opus">Opus</span></div>
+    <div class="flow"><span class="fp">Build real files, scripts, or a codebase?</span><span class="fa">→</span><span class="fp ans-code">Claude Code</span></div>
+    <div class="flow"><span class="fp">Prototype, mockup, deck, or visual?</span><span class="fa">→</span><span class="fp ans-design">Claude Design</span></div>
+    <div class="flow"><span class="fp">Desktop tasks, no code needed?</span><span class="fa">→</span><span class="fp ans-cw">Coworker</span></div>
+    <div class="flow"><span class="fp">Writing, research, day-to-day ops?</span><span class="fa">→</span><span class="fp ans-sonnet">Sonnet (default)</span></div>
+    <div class="flow"><span class="fp">High volume, classification, routing?</span><span class="fa">→</span><span class="fp ans-haiku">Haiku</span></div>
+  </div>
 </section>
+
+<!-- SECTION 2 — SKILLS & CLI -->
 <section id="skills">
   <h2><span class="num">2</span> Skills, Claude Code &amp; the Prompt API</h2>
   <p>Skills are reusable instruction bundles stored on disk. Claude Code reads them automatically before generating output — your standards follow every session without re-prompting.</p>
-  <div class="g2"><div class="card g"><div class="ct">Built-in skill library</div><div class="cs">Public skills — installed with Claude</div><div class="cb">Each skill is a <span class="ic">SKILL.md</span> with constraints, library choices, and examples for that output type.<ul><li><strong>docx</strong> — Word docs with TOC, headings, tables</li><li><strong>pptx</strong> — slide decks, layouts, speaker notes</li><li><strong>xlsx</strong> — spreadsheets, formulas, charts</li><li><strong>pdf</strong> — create, merge, fill, OCR</li><li><strong>frontend-design</strong> — React/HTML with design tokens</li><li><strong>data-analysis</strong> — charts, statistical summaries</li></ul></div></div><div class="card b"><div class="ct">Claude Code — install &amp; configure everything</div><div class="cs">One command, then describe what you need</div><div class="cb"><pre style="margin:4px 0 10px;"><code>npm install -g @anthropic-ai/claude-code</code><span class="lt">bash</span></pre><ul><li>Install &amp; configure MCP servers</li><li>Create <span class="ic">CLAUDE.md</span> project conventions</li><li>Scaffold Django / Next.js / FastAPI projects</li><li>Write, test, and commit automation scripts</li></ul></div></div></div>
-  <div class="card a"><div class="ct">Prompt API (PAI) — AI-powered artifacts</div><div class="cb">Artifacts can call the Anthropic API directly — Claude inside Claude. No backend, no deployment. Build interactive tools, dynamic reports, and live AI features embedded in any artifact.<div class="g2" style="margin-top:10px;"><div style="background:var(--code-bg);border-radius:6px;padding:10px 12px;font-size:12px;color:var(--muted);border-left:2px solid var(--border);"><div style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--border);margin-bottom:4px;">Use case — ticket classifier</div>Paste support tickets → Haiku classifies → live table renders. No server needed.</div><div style="background:var(--code-bg);border-radius:6px;padding:10px 12px;font-size:12px;color:var(--muted);border-left:2px solid var(--border);"><div style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--border);margin-bottom:4px;">Use case — model playground</div>Input box + model picker → compare Haiku / Sonnet / Opus side by side in one artifact.</div></div></div></div>
+
+  <div class="g2">
+    <div class="card g">
+      <div class="ct">Built-in skill library</div>
+      <div class="cs">Public skills — installed with Claude</div>
+      <div class="cb">Each skill is a <span class="ic">SKILL.md</span> with constraints, library choices, and examples for that output type.
+        <ul>
+          <li><strong>docx</strong> — Word docs with TOC, headings, tables</li>
+          <li><strong>pptx</strong> — slide decks, layouts, speaker notes</li>
+          <li><strong>xlsx</strong> — spreadsheets, formulas, charts</li>
+          <li><strong>pdf</strong> — create, merge, fill, OCR</li>
+          <li><strong>frontend-design</strong> — React/HTML with design tokens</li>
+          <li><strong>data-analysis</strong> — charts, statistical summaries</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card b">
+      <div class="ct">Claude Code — install &amp; configure everything</div>
+      <div class="cs">One command, then describe what you need</div>
+      <div class="cb">
+        <pre style="margin:4px 0 10px;"><code>npm install -g @anthropic-ai/claude-code</code><span class="lt">bash</span></pre>
+        <ul>
+          <li>Install &amp; configure MCP servers</li>
+          <li>Create <span class="ic">CLAUDE.md</span> project conventions</li>
+          <li>Scaffold Django / Next.js / FastAPI projects</li>
+          <li>Write, test, and commit automation scripts</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card a">
+    <div class="ct">Prompt API (PAI) — AI-powered artifacts</div>
+    <div class="cb">Artifacts can call the Anthropic API directly — Claude inside Claude. No backend, no deployment. Build interactive tools, dynamic reports, and live AI features embedded in any artifact.
+      <div class="g2" style="margin-top:10px;">
+        <div style="background:var(--code-bg);border-radius:6px;padding:10px 12px;font-size:12px;color:var(--muted);border-left:2px solid var(--border);">
+          <div style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--border);margin-bottom:4px;">Use case — ticket classifier</div>
+          Paste support tickets → Haiku classifies → live table renders. No server needed.
+        </div>
+        <div style="background:var(--code-bg);border-radius:6px;padding:10px 12px;font-size:12px;color:var(--muted);border-left:2px solid var(--border);">
+          <div style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--border);margin-bottom:4px;">Use case — model playground</div>
+          Input box + model picker → compare Haiku / Sonnet / Opus side by side in one artifact.
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+
+<!-- SECTION 3 — TOKEN STRATEGY -->
 <section id="tokens">
   <h2><span class="num">3</span> Token strategy — do more with less</h2>
   <p>Every message burns tokens. These patterns help you manage complex tasks without blowing your context window or hitting rate limits.</p>
-  <div class="g2"><div class="card b"><div class="ct">Grant access, not content</div><div class="cs">MCP connectors — fetch exactly what's needed</div><div class="cb">Instead of pasting data into chat, connect Claude to the source.<ul><li><strong>Google Drive / Docs</strong> — search and read live</li><li><strong>Gmail</strong> — read and draft without copy-paste</li><li><strong>Calendar</strong> — check availability in context</li><li><strong>GitHub</strong> — read, write, PR from chat</li><li><strong>Obsidian</strong> — read/write vault notes directly</li></ul><div class="co" style="margin-top:10px;">Only enable connectors when you need them. Each idle MCP adds ~200–400 tokens per message in tool-listing overhead.</div></div></div><div class="card a"><div class="ct">Keep context lean</div><div class="cs">Context management patterns</div><div class="cb"><ul><li>Use Projects to persist instructions — not repeated pasted prompts</li><li>Break large tasks into chained conversations</li><li>Summarize completed steps before continuing</li><li>Ask Claude to output only what changed, not the full file</li><li>Use Haiku for routing; escalate to Sonnet only when needed</li></ul></div></div></div>
-  <div class="card g"><div class="ct">Agentic task decomposition</div><div class="cb">Structure complex tasks before starting. Give Claude a plan to execute, not a description to improvise.<div class="flow" style="margin-top:12px;"><span class="fp">Define outcome + constraints</span><span class="fa">→</span><span class="fp">Break into numbered steps</span><span class="fa">→</span><span class="fp">Assign model per step</span><span class="fa">→</span><span class="fp">Review at checkpoints</span></div></div></div>
+
+  <div class="g2">
+    <div class="card b">
+      <div class="ct">Grant access, not content</div>
+      <div class="cs">MCP connectors — fetch exactly what's needed</div>
+      <div class="cb">Instead of pasting data into chat, connect Claude to the source.
+        <ul>
+          <li><strong>Google Drive / Docs</strong> — search and read live</li>
+          <li><strong>Gmail</strong> — read and draft without copy-paste</li>
+          <li><strong>Calendar</strong> — check availability in context</li>
+          <li><strong>GitHub</strong> — read, write, PR from chat</li>
+          <li><strong>Obsidian</strong> — read/write vault notes directly</li>
+        </ul>
+        <div class="co" style="margin-top:10px;">Only enable connectors when you need them. Each idle MCP adds ~200–400 tokens per message in tool-listing overhead.</div>
+      </div>
+    </div>
+    <div class="card a">
+      <div class="ct">Keep context lean</div>
+      <div class="cs">Context management patterns</div>
+      <div class="cb">
+        <ul>
+          <li>Use Projects to persist instructions — not repeated pasted prompts</li>
+          <li>Break large tasks into chained conversations</li>
+          <li>Summarize completed steps before continuing</li>
+          <li>Ask Claude to output only what changed, not the full file</li>
+          <li>Use Haiku for routing; escalate to Sonnet only when needed</li>
+        </ul>
+        <div style="background:var(--code-bg);border-radius:6px;padding:8px 10px;margin-top:10px;font-size:12px;color:var(--muted);border-left:2px solid var(--border);">
+          <div style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--border);margin-bottom:3px;">Pattern</div>
+          "Summarize what we've built so far in 3 bullet points, then continue with the next section."
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card g">
+    <div class="ct">Agentic task decomposition</div>
+    <div class="cb">Structure complex tasks before starting. Give Claude a plan to execute, not a description to improvise.
+      <div class="flow" style="margin-top:12px;">
+        <span class="fp">Define outcome + constraints</span><span class="fa">→</span>
+        <span class="fp">Break into numbered steps</span><span class="fa">→</span>
+        <span class="fp">Assign model per step</span><span class="fa">→</span>
+        <span class="fp">Review at checkpoints</span>
+      </div>
+      <div style="background:var(--code-bg);border-radius:6px;padding:10px 12px;margin-top:10px;font-size:12px;color:var(--muted);border-left:2px solid var(--border);">
+        <div style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--border);margin-bottom:4px;">Example — carrier audit pipeline</div>
+        Step 1 (Haiku): classify each lane as active / inactive / disputed.<br>
+        Step 2 (Sonnet): flag lanes with rate variance &gt;12% vs market.<br>
+        Step 3 (Opus): write the carrier negotiation recommendation memo.
+      </div>
+    </div>
+  </div>
 </section>
+
+<!-- SECTION 4 — TELOS -->
 <section id="telos">
   <h2><span class="num">4</span> TELOS — your Claude system prompt</h2>
   <p>TELOS is a structured prompt that tells Claude who you are, how you work, and what you need — so every conversation starts with full context rather than a blank slate.</p>
   <p><strong>T</strong>ask · <strong>E</strong>nvironment · <strong>L</strong>anguage · <strong>O</strong>bjectives · <strong>S</strong>tyle</p>
-  <p style="margin-top:.75rem;">Store it in <span class="ic">30-Library/Prompts/TELOS-System-Prompt.md</span> and paste it into any Claude Project's system prompt field.</p>
+  <p style="margin-top:.75rem;">Store it in <span class="ic">30-Library/Prompts/TELOS-System-Prompt.md</span> and paste it into any Claude Project's system prompt field. Review quarterly or after major role/tool changes.</p>
+
   <h3>Choose your build method</h3>
-  <div class="tgrid"><div class="tc tc-a"><div class="tcb">Option A — PAI Installer</div><div class="tct">Automated interview</div><div class="tcd">Paste the installer prompt into Claude Code or a PAI artifact. An automated interview runs and outputs your complete TELOS. Best for Claude Code users.</div></div><div class="tc tc-b"><div class="tcb">Option B — Recommended</div><div class="tct">Interactive interview</div><div class="tcd">Start a fresh Claude chat, paste the interview prompt below. Claude guides you through in 5–10 minutes. Result is genuinely tailored to your operation.</div></div><div class="tc tc-c"><div class="tcb">Option C</div><div class="tct">Manual template</div><div class="tcd">Edit the starter template in the scaffold. Fill in all [ ] placeholders. Fastest if you know exactly what you want from the start.</div></div></div>
+  <div class="tgrid">
+    <div class="tc tc-a">
+      <div class="tcb">Option A — PAI Installer</div>
+      <div class="tct">Automated interview</div>
+      <div class="tcd">Paste the installer prompt into Claude Code or a PAI artifact. An automated interview runs and outputs your complete TELOS. Best for Claude Code users.</div>
+    </div>
+    <div class="tc tc-b">
+      <div class="tcb">Option B — Recommended</div>
+      <div class="tct">Interactive interview</div>
+      <div class="tcd">Start a fresh Claude chat, paste the interview prompt below. Claude guides you through in 5–10 minutes. Result is genuinely tailored to your operation.</div>
+    </div>
+    <div class="tc tc-c">
+      <div class="tcb">Option C</div>
+      <div class="tct">Manual template</div>
+      <div class="tcd">Edit the starter template in the scaffold. Fill in all [ ] placeholders. Fastest if you know exactly what you want from the start.</div>
+    </div>
+  </div>
+
+  <h4>Option A — PAI installer prompt</h4>
+  <pre><code>You are a TELOS configuration assistant for operations and logistics professionals.
+Interview the user to produce a complete TELOS system prompt for a Claude Project.
+
+Rules: ask exactly one question at a time. Wait for each answer.
+Do not generate the TELOS until all sections are complete.
+
+Cover in order:
+1. Role, title, and organization type (e.g. 3PL owner, IT director, ops manager)
+2. Number of facilities and how they are organized
+3. Key systems: WMS, TMS, ERP, IT/network tools, communication platforms
+4. Primary Claude use cases (writing, analysis, automation, IT, all of the above)
+5. Tone and format preference (concise vs. detailed, plain vs. technical)
+6. Ambiguity handling — ask first, or attempt and flag uncertainty
+7. Non-negotiables: things Claude should always or never do
+
+Output the completed TELOS inside a markdown code block with clear T/E/L/O/S headers.</code><span class="lt">prompt</span></pre>
+
   <h4>Option B — Interview prompt</h4>
   <pre><code>I want to build a TELOS system prompt to use across my Claude Projects.
 I work in logistics / 3PL operations. Please interview me — one question at a time —
@@ -213,118 +514,554 @@ covering my role, tools, communication style, and working preferences.
 
 After the interview, generate a complete TELOS with T / E / L / O / S sections
 ready to paste into a Claude Project system prompt.</code><span class="lt">prompt</span></pre>
+
+  <h4>Option C — Manual starter (3PL template)</h4>
+  <pre><code>**Task:** You are my operations and AI assistant for a third-party logistics company.
+
+**Environment:**
+- Organization: [Company name] — [number]-site 3PL warehouse operation
+- Facilities: [naming convention, e.g. Site A through Site F]
+- Key systems: [WMS platform], [TMS platform], [accounting/ERP]
+- Team: [approximate headcount or team structure]
+- Platforms: [Mac/Windows], [communication tools], [project tools]
+
+**Language:**
+- Direct and concise — skip preamble and pleasantries
+- Plain language for business; precise and technical for IT/systems topics
+- Markdown only when it genuinely adds clarity
+
+**Objectives:**
+- Manage day-to-day operations, carrier relationships, client communications
+- Draft SOPs, emails, escalations, and operational reports
+- Analyze operational data and surface actionable insights
+- Support technology decisions across facilities
+
+**Style:**
+- If ambiguous, ask one clarifying question — do not guess
+- When I ask for options, give 2–3 with a clear recommendation
+- Flag when your training data may be outdated on fast-changing topics</code><span class="lt">template</span></pre>
 </section>
+
+<!-- SECTION 5 — PROJECTS & ARTIFACTS -->
 <section id="projects">
   <h2><span class="num">5</span> Projects &amp; artifacts</h2>
   <p>Projects give Claude persistent instructions and shared context. Artifacts are the outputs — rendered, downloadable, and reusable.</p>
-  <div class="g2"><div class="card b"><div class="ct">Projects — persistent workspace</div><div class="cb">A Project is a conversation space with a shared system prompt, uploaded docs, and memory that persists across chats.<ul><li>Attach docs: runbooks, schemas, SOPs, rate sheets</li><li>Set system prompt once — applies to every chat in the project</li><li>Conversations are searchable via past chats</li></ul></div></div><div class="card g"><div class="ct">Artifacts — rendered, reusable outputs</div><div class="cb">Artifacts render inline in chat — not just text.<ul><li><strong>Markdown</strong> — reports, runbooks, guides</li><li><strong>HTML / React</strong> — dashboards, tools, forms</li><li><strong>SVG</strong> — network diagrams, flowcharts</li><li><strong>Code files</strong> — scripts, configs, ready to copy</li></ul></div></div></div>
+
+  <div class="g2">
+    <div class="card b">
+      <div class="ct">Projects — persistent workspace</div>
+      <div class="cb">A Project is a conversation space with a shared system prompt, uploaded docs, and memory that persists across chats.
+        <ul>
+          <li>Attach docs: runbooks, schemas, SOPs, rate sheets</li>
+          <li>Set system prompt once — applies to every chat in the project</li>
+          <li>Conversations are searchable via past chats</li>
+          <li>Good pattern: one project per facility, one per major initiative</li>
+        </ul>
+        <div style="background:var(--code-bg);border-radius:6px;padding:8px 10px;margin-top:10px;font-size:12px;color:var(--muted);border-left:2px solid var(--border);">
+          <div style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--border);margin-bottom:3px;">Example project system prompt</div>
+          "You are managing operations at Site B, a 250k sqft cross-dock facility. WMS: Extensiv. Refer to the attached rate card and SOP library."
+        </div>
+      </div>
+    </div>
+    <div class="card g">
+      <div class="ct">Artifacts — rendered, reusable outputs</div>
+      <div class="cb">Artifacts render inline in chat — not just text.
+        <ul>
+          <li><strong>Markdown</strong> — reports, runbooks, guides</li>
+          <li><strong>HTML / React</strong> — dashboards, tools, forms</li>
+          <li><strong>SVG</strong> — network diagrams, flowcharts</li>
+          <li><strong>Code files</strong> — scripts, configs, ready to copy</li>
+        </ul>
+        <div class="co g" style="margin-top:10px;">Ask Claude to <strong>update the artifact</strong> rather than regenerating from scratch. Each edit preserves the structure and costs fewer tokens.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card a">
+    <div class="ct">Artifact + PAI = live applications</div>
+    <div class="cb">Combine artifacts with the Prompt API to build tools that run Claude inside them.
+      <div class="g3" style="margin-top:10px;">
+        <div style="background:var(--code-bg);border-radius:6px;padding:10px 12px;font-size:12px;color:var(--muted);">
+          <div style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--border);margin-bottom:4px;">Ticket classifier</div>
+          Paste tickets → Haiku classifies → table renders live
+        </div>
+        <div style="background:var(--code-bg);border-radius:6px;padding:10px 12px;font-size:12px;color:var(--muted);">
+          <div style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--border);margin-bottom:4px;">Prompt playground</div>
+          Input + model picker → compare Haiku/Sonnet/Opus
+        </div>
+        <div style="background:var(--code-bg);border-radius:6px;padding:10px 12px;font-size:12px;color:var(--muted);">
+          <div style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--border);margin-bottom:4px;">SOP generator</div>
+          Fill a form → Sonnet writes the SOP → download as .md
+        </div>
+      </div>
+      <div class="co a" style="margin-top:10px;">To share any artifact: click the <strong>Share</strong> button (arrow icon) → generates a public URL anyone can open in their browser. No login required.</div>
+    </div>
+  </div>
 </section>
+
+<!-- SECTION 6 — PRO TIPS -->
 <section id="tips">
   <h2><span class="num">6</span> Pro tips</h2>
-  <div class="card"><div style="display:flex;flex-direction:column;gap:0;"><div style="display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--muted);"><span style="font-size:15px;flex-shrink:0;margin-top:1px;">✏️</span><span><strong>Be specific, not polite.</strong> "Write a Python script that reads a CSV of carrier IDs and hits our TMS API to pull active lanes" beats "Can you help me with a script?"</span></div><div style="display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--muted);"><span style="font-size:15px;flex-shrink:0;margin-top:1px;">🔢</span><span><strong>Use numbered steps for complex tasks.</strong> "Step 1: … Step 2: … Step 3: …" forces Claude to execute in order.</span></div><div style="display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--muted);"><span style="font-size:15px;flex-shrink:0;margin-top:1px;">🔄</span><span><strong>Iterate, don't restart.</strong> "Update this to also handle…" keeps the context window loaded.</span></div><div style="display:flex;gap:10px;padding:9px 0;font-size:13px;color:var(--muted);"><span style="font-size:15px;flex-shrink:0;margin-top:1px;">📄</span><span><strong>CLAUDE.md is your project constitution.</strong> Put conventions, naming standards, and commit formats there. Claude Code reads it automatically every session.</span></div></div></div>
+
+  <div class="card">
+    <div style="display:flex;flex-direction:column;gap:0;">
+      <div style="display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--muted);">
+        <span style="font-size:15px;flex-shrink:0;margin-top:1px;">✏️</span>
+        <span><strong>Be specific, not polite.</strong> "Write a Python script that reads a CSV of carrier IDs and hits our TMS API to pull active lanes, logging failures to a JSON file" beats "Can you help me with a script?"</span>
+      </div>
+      <div style="display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--muted);">
+        <span style="font-size:15px;flex-shrink:0;margin-top:1px;">🔢</span>
+        <span><strong>Use numbered steps for complex tasks.</strong> "Step 1: … Step 2: … Step 3: …" forces Claude to execute in order and makes errors easier to catch at each stage.</span>
+      </div>
+      <div style="display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--muted);">
+        <span style="font-size:15px;flex-shrink:0;margin-top:1px;">🏷️</span>
+        <span><strong>Request XML tags for structured output.</strong> "Return your answer in &lt;analysis&gt;, &lt;recommendation&gt;, and &lt;code&gt; tags" makes it easy to parse or route responses programmatically.</span>
+      </div>
+      <div style="display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--muted);">
+        <span style="font-size:15px;flex-shrink:0;margin-top:1px;">🚫</span>
+        <span><strong>Give a negative example.</strong> "Write the summary. Do not use bullet points or the word 'leverage'." Negative constraints are more precise than style descriptions.</span>
+      </div>
+      <div style="display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--muted);">
+        <span style="font-size:15px;flex-shrink:0;margin-top:1px;">🧠</span>
+        <span><strong>Ask for reasoning before the answer.</strong> "Think through this before answering" consistently improves accuracy on complex problems, especially with Sonnet.</span>
+      </div>
+      <div style="display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--muted);">
+        <span style="font-size:15px;flex-shrink:0;margin-top:1px;">🔄</span>
+        <span><strong>Iterate, don't restart.</strong> "Update this to also handle…" keeps the context window loaded. New conversations cost setup tokens every time.</span>
+      </div>
+      <div style="display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--muted);">
+        <span style="font-size:15px;flex-shrink:0;margin-top:1px;">🔌</span>
+        <span><strong>Disable unused MCP connectors.</strong> Each connected-but-idle MCP adds tool-listing overhead every turn. Toggle off what you're not using.</span>
+      </div>
+      <div style="display:flex;gap:10px;padding:9px 0;font-size:13px;color:var(--muted);">
+        <span style="font-size:15px;flex-shrink:0;margin-top:1px;">📄</span>
+        <span><strong>CLAUDE.md is your project constitution.</strong> Put conventions, naming standards, and commit formats in a CLAUDE.md at the repo root. Claude Code reads it automatically every session.</span>
+      </div>
+    </div>
+  </div>
+
+  <h3>Prompt cheatsheet</h3>
+  <div class="g2">
+    <div class="card">
+      <div class="ct">For better output</div>
+      <div class="cb" style="font-family:var(--mono);font-size:12px;line-height:2;">
+        "Return only JSON — no preamble or backticks."<br>
+        "Use &lt;result&gt; tags for your final answer."<br>
+        "Be concise. Maximum 3 sentences."<br>
+        "Explain your reasoning, then give the answer."
+      </div>
+    </div>
+    <div class="card">
+      <div class="ct">For complex tasks</div>
+      <div class="cb" style="font-family:var(--mono);font-size:12px;line-height:2;">
+        "Before answering, list your assumptions."<br>
+        "If uncertain, say so — don't guess."<br>
+        "Show your plan first, then execute."<br>
+        "Ask me one question if anything is unclear."
+      </div>
+    </div>
+  </div>
 </section>
+
+<!-- ══════════════════════════════
+     PART 2 — OBSIDIAN SETUP
+     ══════════════════════════════ -->
+
+<!-- SECTION 7 — INSTALL -->
 <section id="install">
   <h2><span class="num">7</span> Install Obsidian + Claude Desktop</h2>
-  <p>Both apps are needed for the full Claude-integrated workflow.</p>
-  <div class="tabs"><button class="tab active" onclick="sw('mac',this)">🍎 macOS</button><button class="tab win" onclick="sw('win',this)">🪟 Windows 11</button></div>
+  <p>Both apps are needed for the full Claude-integrated workflow. Install both before setting up your vault.</p>
+
+  <div class="tabs">
+    <button class="tab active" onclick="sw('mac',this)">🍎 macOS</button>
+    <button class="tab win" onclick="sw('win',this)">🪟 Windows 11</button>
+  </div>
+
   <div class="tp active" id="tp-mac">
-    <h4>Install Obsidian</h4><pre><code>brew install --cask obsidian</code><span class="lt">bash</span></pre>
-    <h4>Install Claude Desktop</h4><pre><code>brew install --cask claude</code><span class="lt">bash</span></pre>
-    <h4>Install Claude Code (optional)</h4><pre><code>npm install -g @anthropic-ai/claude-code</code><span class="lt">bash</span></pre>
-    <div class="tw"><table><tr><th>File</th><th>Path</th></tr><tr><td><strong>Claude Desktop MCP config</strong></td><td><span class="ic">~/Library/Application Support/Claude/claude_desktop_config.json</span></td></tr><tr><td><strong>Obsidian vault (iCloud)</strong></td><td><span class="ic">~/Library/Mobile Documents/iCloud~md~obsidian/Documents/</span></td></tr></table></div>
+    <h4>Prerequisites</h4>
+    <p><strong>Homebrew</strong> — skip if already installed:</p>
+    <pre><code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code><span class="lt">bash</span></pre>
+    <p><strong>Node.js</strong> — required for Claude Code and MCP tools:</p>
+    <pre><code>brew install node</code><span class="lt">bash</span></pre>
+    <p>Verify: <span class="ic">node --version</span> should return v18 or higher.</p>
+
+    <h4>Install Obsidian</h4>
+    <p>Option A — Homebrew (recommended):</p>
+    <pre><code>brew install --cask obsidian</code><span class="lt">bash</span></pre>
+    <p>Option B — Download the <strong>.dmg</strong> from <a href="https://obsidian.md/download" target="_blank">obsidian.md/download</a>, open it, drag to <span class="ic">/Applications</span>.</p>
+
+    <h4>Install Claude Desktop</h4>
+    <pre><code>brew install --cask claude</code><span class="lt">bash</span></pre>
+    <p>Or download the <strong>.dmg</strong> from <a href="https://claude.ai/download" target="_blank">claude.ai/download</a>.</p>
+
+    <h4>Install Claude Code (optional)</h4>
+    <pre><code>npm install -g @anthropic-ai/claude-code</code><span class="lt">bash</span></pre>
+    <p>Verify: <span class="ic">claude --version</span> in Terminal.</p>
+
+    <h4>Config file locations</h4>
+    <div class="tw"><table>
+      <tr><th>File</th><th>Path</th></tr>
+      <tr><td><strong>Claude Desktop MCP config</strong></td><td><span class="ic">~/Library/Application Support/Claude/claude_desktop_config.json</span></td></tr>
+      <tr><td><strong>Obsidian vault (iCloud)</strong></td><td><span class="ic">~/Library/Mobile Documents/iCloud~md~obsidian/Documents/</span></td></tr>
+      <tr><td><strong>Obsidian vault (local)</strong></td><td><span class="ic">~/Documents/</span> or any folder you choose</td></tr>
+    </table></div>
+    <div class="co g"><strong>iCloud tip:</strong> Create the vault inside the iCloud path above — it syncs automatically to iPhone/iPad via the Obsidian iOS app.</div>
+    <div class="co a"><strong>Gatekeeper:</strong> If macOS blocks first launch, go to System Settings → Privacy &amp; Security → Open Anyway. One-time step.</div>
   </div>
+
   <div class="tp" id="tp-win">
-    <h4>Install Obsidian</h4><pre><code>winget install Obsidian.Obsidian</code><span class="lt">powershell</span></pre>
-    <h4>Install Claude Desktop</h4><pre><code>winget install Anthropic.Claude</code><span class="lt">powershell</span></pre>
-    <h4>Install Claude Code (optional)</h4><pre><code>npm install -g @anthropic-ai/claude-code</code><span class="lt">powershell</span></pre>
-    <div class="tw"><table><tr><th>File</th><th>Path</th></tr><tr><td><strong>Claude Desktop MCP config</strong></td><td><span class="ic">%APPDATA%\Claude\claude_desktop_config.json</span></td></tr><tr><td><strong>Obsidian vault (OneDrive)</strong></td><td><span class="ic">C:\Users\[You]\OneDrive\Documents\</span></td></tr></table></div>
+    <p><strong>winget</strong> is built into Windows 11. Open <strong>Terminal</strong> or <strong>PowerShell</strong> as a regular user (not admin).</p>
+    <div class="co"><strong>Tip:</strong> Install Windows Terminal if not present: <span class="ic">winget install Microsoft.WindowsTerminal</span></div>
+
+    <h4>Node.js</h4>
+    <pre><code>winget install OpenJS.NodeJS.LTS</code><span class="lt">powershell</span></pre>
+    <p>Close and reopen Terminal. Verify: <span class="ic">node --version</span></p>
+
+    <h4>Install Obsidian</h4>
+    <pre><code>winget install Obsidian.Obsidian</code><span class="lt">powershell</span></pre>
+    <p>Or download the <strong>.exe</strong> from <a href="https://obsidian.md/download" target="_blank">obsidian.md/download</a> — installs to <span class="ic">%LOCALAPPDATA%\Obsidian\</span>, no admin required.</p>
+
+    <h4>Install Claude Desktop</h4>
+    <pre><code>winget install Anthropic.Claude</code><span class="lt">powershell</span></pre>
+
+    <h4>Install Claude Code (optional)</h4>
+    <pre><code>npm install -g @anthropic-ai/claude-code</code><span class="lt">powershell</span></pre>
+
+    <h4>Config file locations</h4>
+    <div class="tw"><table>
+      <tr><th>File</th><th>Path</th></tr>
+      <tr><td><strong>Claude Desktop MCP config</strong></td><td><span class="ic">%APPDATA%\Claude\claude_desktop_config.json</span></td></tr>
+      <tr><td><strong>Obsidian vault (OneDrive)</strong></td><td><span class="ic">C:\Users\[You]\OneDrive\Documents\</span></td></tr>
+      <tr><td><strong>Obsidian vault (local)</strong></td><td>Any folder — avoid paths with spaces or special characters</td></tr>
+    </table></div>
+    <div class="co g"><strong>OneDrive tip:</strong> Place vault inside OneDrive Documents for automatic backup and sync to Android via the Obsidian mobile app.</div>
+    <div class="co a"><strong>SmartScreen:</strong> If Windows blocks first launch, click More info → Run anyway. One-time step.</div>
   </div>
+
+  <h3>📱 Mobile — iOS / Android</h3>
+  <p>Free app from the App Store or Google Play. Open your existing vault from whichever sync option you choose.</p>
+
   <h3>Sync — choose one</h3>
-  <div class="tw"><table><tr><th>Option</th><th>Cost</th><th>Best for</th></tr><tr><td><strong>Obsidian Sync</strong> <span class="rec">recommended</span></td><td>$8/mo</td><td>Simplest, end-to-end encrypted, all platforms</td></tr><tr><td><strong>iCloud</strong></td><td>Included</td><td>macOS + iOS only</td></tr><tr><td><strong>OneDrive</strong></td><td>Included w/ M365</td><td>Windows + Android</td></tr><tr><td><strong>Git (GitHub)</strong></td><td>Free</td><td>Teams, full version history</td></tr></table></div>
+  <div class="tw"><table>
+    <tr><th>Option</th><th>Cost</th><th>Best for</th></tr>
+    <tr><td><strong>Obsidian Sync</strong> <span class="rec">recommended</span></td><td>$8/mo</td><td>Simplest, end-to-end encrypted, all platforms</td></tr>
+    <tr><td><strong>iCloud</strong></td><td>Included</td><td>macOS + iOS only — zero setup</td></tr>
+    <tr><td><strong>OneDrive</strong></td><td>Included w/ M365</td><td>Windows + Android</td></tr>
+    <tr><td><strong>Dropbox</strong></td><td>Free tier / paid</td><td>Cross-platform, widely supported</td></tr>
+    <tr><td><strong>Git (GitHub)</strong></td><td>Free</td><td>Teams, full version history, pairs with Obsidian Git plugin</td></tr>
+  </table></div>
 </section>
+
+<!-- SECTION 8 — VAULT -->
 <section id="vault">
   <h2><span class="num">8</span> Create your vault</h2>
-  <div class="steps"><div class="step"><div class="sn">1</div><div class="sb"><strong>Open Obsidian → Create new vault</strong>Name it: <span class="ic">Ops-Brain</span> or your company name.</div></div><div class="step"><div class="sn">2</div><div class="sb"><strong>Choose your sync location</strong>Point the vault folder at your iCloud, OneDrive, or Obsidian Sync path.</div></div><div class="step"><div class="sn">3</div><div class="sb"><strong>Drop the scaffold in</strong>Unzip <span class="ic">CDaze-Brain-Scaffold.zip</span> and copy its contents into the vault root.</div></div></div>
+  <div class="steps">
+    <div class="step"><div class="sn">1</div><div class="sb"><strong>Open Obsidian → Create new vault</strong>Name it: <span class="ic">Ops-Brain</span>, <span class="ic">3PL-Hub</span>, or your company name.</div></div>
+    <div class="step"><div class="sn">2</div><div class="sb"><strong>Choose your sync location</strong>Point the vault folder at your iCloud, OneDrive, or Obsidian Sync path.</div></div>
+    <div class="step"><div class="sn">3</div><div class="sb"><strong>Drop the scaffold in</strong>Unzip <span class="ic">CDaze-Brain-Scaffold.zip</span> and copy its contents into the vault root. Obsidian picks everything up immediately.</div></div>
+  </div>
 </section>
+
+<!-- SECTION 9 — STRUCTURE -->
 <section id="structure">
   <h2><span class="num">9</span> Vault folder structure</h2>
-  <div class="tree"><span class="f">Your-Vault/</span>
-├── <span class="f">00-Inbox/</span>         <span class="cm">← capture everything here first</span>
-├── <span class="f">10-Daily/</span>         <span class="cm">← one note per day</span>
+  <div class="tree">
+<span class="f">Your-Vault/</span>
+├── <span class="f">00-Inbox/</span>         <span class="cm">← capture everything here first, sort later</span>
+├── <span class="f">10-Daily/</span>         <span class="cm">← one note per day (Daily Notes plugin)</span>
 ├── <span class="f">20-Projects/</span>
-│   ├── <span class="f">Active/</span>
-│   └── <span class="f">Archive/</span>
+│   ├── <span class="f">Active/</span>       <span class="cm">← current initiatives</span>
+│   └── <span class="f">Archive/</span>      <span class="cm">← completed projects</span>
 ├── <span class="f">30-Library/</span>
-│   ├── <span class="f">Prompts/</span>
-│   ├── <span class="f">Playbooks/</span>
-│   ├── <span class="f">SOPs/</span>
-│   └── <span class="f">References/</span>
+│   ├── <span class="f">Prompts/</span>      <span class="cm">← Claude prompts, TELOS, memory log</span>
+│   ├── <span class="f">Playbooks/</span>    <span class="cm">← step-by-step operational guides</span>
+│   ├── <span class="f">SOPs/</span>         <span class="cm">← standard operating procedures</span>
+│   └── <span class="f">References/</span>   <span class="cm">← external docs, contracts, specs</span>
 ├── <span class="f">40-Assets/</span>
-├── <span class="f">50-Archive/</span>
-└── <span class="f">Templates/</span></div>
+│   ├── <span class="f">Diagrams/</span>
+│   ├── <span class="f">Screenshots/</span>
+│   └── <span class="f">Attachments/</span>
+├── <span class="f">50-Archive/</span>       <span class="cm">← deprecated or closed notes</span>
+└── <span class="f">Templates/</span>        <span class="cm">← Daily, Project, SOP, Prompt templates</span>
+  </div>
+  <div class="co" style="margin-top:1rem;"><strong>Naming convention:</strong> <span class="ic">YYYY-MM-DD-Description.md</span> for dated notes · <span class="ic">Noun-Verb.md</span> for reference notes (e.g. <span class="ic">Carrier-Onboarding.md</span>)</div>
 </section>
+
+<!-- SECTION 10 — SETTINGS -->
 <section id="settings">
   <h2><span class="num">10</span> Core settings</h2>
-  <p>Open <strong>Settings</strong> (<span class="ic">Cmd+,</span> Mac / <span class="ic">Ctrl+,</span> Windows).</p>
-  <div class="g2"><div class="card"><div class="ct">Files &amp; Links</div><div class="cb"><ul><li><strong>Default location for new notes:</strong> <span class="ic">00-Inbox</span></li><li><strong>Use wikilinks:</strong> on</li><li><strong>New link format:</strong> Shortest path</li></ul></div></div><div class="card"><div class="ct">Editor</div><div class="cb"><ul><li><strong>Readable line length:</strong> on</li><li><strong>Spellcheck:</strong> on</li></ul></div></div></div>
+  <p>Open <strong>Settings</strong> (<span class="ic">Cmd+,</span> Mac / <span class="ic">Ctrl+,</span> Windows) and configure these first.</p>
+  <div class="g2">
+    <div class="card"><div class="ct">Files &amp; Links</div><div class="cb"><ul>
+      <li><strong>Default location for new notes:</strong> <span class="ic">00-Inbox</span></li>
+      <li><strong>Use wikilinks:</strong> on — enables <span class="ic">[[Note Name]]</span></li>
+      <li><strong>New link format:</strong> Shortest path when possible</li>
+    </ul></div></div>
+    <div class="card"><div class="ct">Editor</div><div class="cb"><ul>
+      <li><strong>Readable line length:</strong> on</li>
+      <li><strong>Spellcheck:</strong> on</li>
+      <li><strong>Vim key bindings:</strong> optional</li>
+    </ul></div></div>
+  </div>
 </section>
+
+<!-- SECTION 11 — CORE PLUGINS -->
 <section id="core-plugins">
   <h2><span class="num">11</span> Core plugins</h2>
-  <div class="tw"><table><tr><th>Plugin</th><th>What it does</th></tr><tr><td><strong>Daily notes</strong></td><td>Creates a dated note each day from your template</td></tr><tr><td><strong>Templates</strong></td><td>Insert template content into any note</td></tr><tr><td><strong>Backlinks</strong></td><td>See which notes link to the current one</td></tr><tr><td><strong>Quick switcher</strong></td><td>Jump to any note instantly</td></tr><tr><td><strong>Command palette</strong></td><td>Run any action by name</td></tr><tr><td><strong>File recovery</strong></td><td>Auto-snapshots — critical safety net</td></tr></table></div>
+  <p><strong>Settings → Core plugins</strong> — all built-in, all free.</p>
+  <div class="tw"><table>
+    <tr><th>Plugin</th><th>What it does</th></tr>
+    <tr><td><strong>Daily notes</strong></td><td>Creates a dated note each day from your template</td></tr>
+    <tr><td><strong>Templates</strong></td><td>Insert template content into any note</td></tr>
+    <tr><td><strong>Backlinks</strong></td><td>See which notes link to the current one</td></tr>
+    <tr><td><strong>Outgoing links</strong></td><td>See all links from the current note</td></tr>
+    <tr><td><strong>Quick switcher</strong></td><td>Jump to any note instantly (<span class="ic">Cmd/Ctrl+O</span>)</td></tr>
+    <tr><td><strong>Command palette</strong></td><td>Run any action by name (<span class="ic">Cmd/Ctrl+P</span>)</td></tr>
+    <tr><td><strong>Search</strong></td><td>Full-text search across entire vault</td></tr>
+    <tr><td><strong>Tags</strong></td><td>Tag pane in sidebar</td></tr>
+    <tr><td><strong>File recovery</strong></td><td>Auto-snapshots — critical safety net</td></tr>
+  </table></div>
   <div class="co g"><strong>Daily notes config:</strong> Template = <span class="ic">Templates/Daily-Note</span> · Folder = <span class="ic">10-Daily</span> · Date format = <span class="ic">YYYY-MM-DD</span></div>
 </section>
+
+<!-- SECTION 12 — COMMUNITY PLUGINS -->
 <section id="community">
   <h2><span class="num">12</span> Community plugins</h2>
+  <p><strong>Settings → Community plugins → Browse</strong>. Disable Restricted Mode when prompted.</p>
+
   <div style="margin-bottom:0.5rem;"><span class="tier t1">Tier 1 — Install immediately</span></div>
-  <div class="g2"><div class="card g"><div class="ct">Templater</div><div class="cb">Dynamic template variables. Enable "Trigger on new file creation."</div></div><div class="card g"><div class="ct">Obsidian Git</div><div class="cb">Auto-commits vault to GitHub — free backup with full version history.</div></div><div class="card g"><div class="ct">QuickAdd</div><div class="cb">One keystroke to create a note from any template.</div></div><div class="card g"><div class="ct">Calendar</div><div class="cb">Sidebar calendar widget. Click any date to open that day's daily note.</div></div></div>
+  <div class="g2">
+    <div class="card g"><div class="ct">Templater</div><div class="cb">Dynamic template variables: <span class="ic">{{date:YYYY-MM-DD}}</span>, <span class="ic">{{title}}</span>, custom scripts. Enable "Trigger on new file creation."</div></div>
+    <div class="card g"><div class="ct">Obsidian Git</div><div class="cb">Auto-commits vault to GitHub — free backup with full version history. Auto-commit every 10 min, push on commit, pull on startup.</div></div>
+    <div class="card g"><div class="ct">QuickAdd</div><div class="cb">One keystroke to create a note from any template.<br><span class="ic">Cmd+Shift+S</span> → New SOP<br><span class="ic">Cmd+Shift+Q</span> → New Prompt entry</div></div>
+    <div class="card g"><div class="ct">Calendar</div><div class="cb">Sidebar calendar widget. Click any date to open or create that day's daily note. Dots show which days have notes.</div></div>
+  </div>
+
   <div style="margin:1.25rem 0 0.5rem;"><span class="tier t2">Tier 2 — High value for operations teams</span></div>
-  <div class="g2"><div class="card b"><div class="ct">Kanban</div><div class="cb">Drag-and-drop boards. Use for carrier pipelines and facility project tracking.</div></div><div class="card b"><div class="ct">Advanced Tables</div><div class="cb">Tab-to-navigate markdown tables. Essential for decision logs.</div></div><div class="card b"><div class="ct">Linter</div><div class="cb">Auto-formats notes on save: consistent YAML frontmatter.</div></div><div class="card b"><div class="ct">Natural Language Dates</div><div class="cb">Type <span class="ic">@today</span>, <span class="ic">@next Friday</span> and it converts to a real date.</div></div></div>
+  <div class="g2">
+    <div class="card b"><div class="ct">Kanban</div><div class="cb">Drag-and-drop boards in any note. Use for carrier pipelines, onboarding, facility project tracking.</div></div>
+    <div class="card b"><div class="ct">Advanced Tables</div><div class="cb">Tab-to-navigate markdown tables. Essential for decision logs and carrier/client tracking.</div></div>
+    <div class="card b"><div class="ct">Linter</div><div class="cb">Auto-formats notes on save: consistent YAML frontmatter, heading style. Set and forget.</div></div>
+    <div class="card b"><div class="ct">Natural Language Dates</div><div class="cb">Type <span class="ic">@today</span>, <span class="ic">@next Friday</span>, <span class="ic">@2w</span> and it converts to a real date.</div></div>
+    <div class="card b"><div class="ct">Iconize</div><div class="cb">Icons on folders: 📥 Inbox · 📅 Daily · 🗂 Projects · 📚 Library · 🗃 Archive.</div></div>
+  </div>
+
   <div style="margin:1.25rem 0 0.5rem;"><span class="tier t3">Tier 3 — Power user / IT-focused</span></div>
-  <div class="g2"><div class="card a"><div class="ct">Excalidraw</div><div class="cb">Embedded whiteboard for network diagrams and warehouse layouts.</div></div><div class="card a"><div class="ct">Local REST API ⚡</div><div class="cb"><strong>Required for Claude MCP.</strong> Exposes vault over local HTTP.</div></div></div>
+  <div class="g2">
+    <div class="card a"><div class="ct">Excalidraw</div><div class="cb">Embedded whiteboard. Draw warehouse layouts, network diagrams, and process flows inside a note — stored as SVG.</div></div>
+    <div class="card a"><div class="ct">Dataview <em style="font-size:11px;font-weight:400;">(optional)</em></div><div class="cb">SQL-like queries from note metadata.<br><span class="ic">TABLE status FROM "20-Projects/Active"</span></div></div>
+    <div class="card a"><div class="ct">Local REST API ⚡</div><div class="cb"><strong>Required for Claude MCP.</strong> Exposes vault over local HTTP so Claude can read and write notes directly from chat.</div></div>
+  </div>
 </section>
+
+<!-- SECTION 13 — MCP -->
 <section id="mcp">
   <h2><span class="num">13</span> Claude MCP integration</h2>
   <p>Connects Claude directly to your vault. Requires <strong>Local REST API</strong> community plugin.</p>
-  <div class="steps"><div class="step"><div class="sn">1</div><div class="sb"><strong>Set up Local REST API</strong>Settings → Community plugins → install Local REST API → Generate API key → note port (default: <span class="ic">27123</span>).</div></div><div class="step"><div class="sn">2</div><div class="sb"><strong>Edit Claude Desktop config</strong><div class="tabs" style="margin-top:8px;"><button class="tab active" onclick="sw2('mac',this)">🍎 macOS</button><button class="tab win" onclick="sw2('win',this)">🪟 Windows 11</button></div><div class="tp active" id="tp2-mac"><pre><code>code ~/Library/Application\ Support/Claude/claude_desktop_config.json</code><span class="lt">bash</span></pre></div><div class="tp" id="tp2-win"><pre><code>code "$env:APPDATA\Claude\claude_desktop_config.json"</code><span class="lt">powershell</span></pre></div></div></div><div class="step"><div class="sn">3</div><div class="sb"><strong>Add the MCP server block</strong><pre><code>{"mcpServers":{"obsidian":{"command":"npx","args":["-y","obsidian-mcp-tools"],"env":{"OBSIDIAN_API_KEY":"your-api-key-here","OBSIDIAN_HOST":"http://localhost:27123"}}}}</code><span class="lt">json</span></pre></div></div><div class="step"><div class="sn">4</div><div class="sb"><strong>Fully restart Claude Desktop</strong>Quit from menu bar / system tray — not just close the window.</div></div></div>
-  <div class="tw"><table><tr><th>Say this</th><th>Claude does this</th></tr><tr><td>"Pull up my Carrier Onboarding SOP"</td><td>Reads and displays the note in context</td></tr><tr><td>"Create a project note for the WMS rollout at Site B"</td><td>Creates from your template, pre-filled</td></tr><tr><td>"Add a summary of this session to today's daily note"</td><td>Appends to your daily log</td></tr></table></div>
+
+  <div class="steps">
+    <div class="step"><div class="sn">1</div><div class="sb"><strong>Set up Local REST API</strong>Settings → Community plugins → install Local REST API → open its settings → click Generate → note the port (default: <span class="ic">27123</span>). Leave it running.</div></div>
+    <div class="step"><div class="sn">2</div><div class="sb">
+      <strong>Open the Claude Desktop config file</strong>
+      <div class="tabs" style="margin-top:8px;">
+        <button class="tab active" onclick="sw2('mac',this)">🍎 macOS</button>
+        <button class="tab win" onclick="sw2('win',this)">🪟 Windows 11</button>
+      </div>
+      <div class="tp active" id="tp2-mac">
+        <pre><code>open -a TextEdit "~/Library/Application Support/Claude/claude_desktop_config.json"
+# or in VS Code:
+code ~/Library/Application\ Support/Claude/claude_desktop_config.json</code><span class="lt">bash</span></pre>
+      </div>
+      <div class="tp" id="tp2-win">
+        <pre><code>notepad "$env:APPDATA\Claude\claude_desktop_config.json"
+# or in VS Code:
+code "$env:APPDATA\Claude\claude_desktop_config.json"</code><span class="lt">powershell</span></pre>
+      </div>
+      <div class="co" style="margin-top:8px;">If the file does not exist yet, create it — Claude Desktop picks it up on next launch.</div>
+    </div></div>
+    <div class="step"><div class="sn">3</div><div class="sb"><strong>Add the MCP server block</strong>
+      <pre><code>{
+  "mcpServers": {
+    "obsidian": {
+      "command": "npx",
+      "args": ["-y", "obsidian-mcp-tools"],
+      "env": {
+        "OBSIDIAN_API_KEY": "your-api-key-here",
+        "OBSIDIAN_HOST": "http://localhost:27123"
+      }
+    }
+  }
+}</code><span class="lt">json</span></pre>
+    </div></div>
+    <div class="step"><div class="sn">4</div><div class="sb"><strong>Fully restart Claude Desktop</strong>Quit from the menu bar (macOS) or system tray (Windows) — not just close the window. Obsidian tools will appear in Claude's tool list.</div></div>
+  </div>
+
+  <div class="co g"><strong>Via Claude Code:</strong> "Install and configure obsidian-mcp-tools for Claude Desktop. Vault at [path], Local REST API on port 27123, API key is [key]. Show me the config before writing it."</div>
+
+  <h3>What Claude can do once connected</h3>
+  <div class="tw"><table>
+    <tr><th>Say this</th><th>Claude does this</th></tr>
+    <tr><td>"Pull up my Carrier Onboarding SOP"</td><td>Reads and displays the note in context</td></tr>
+    <tr><td>"Create a project note for the WMS rollout at Site B"</td><td>Creates from your template, pre-filled</td></tr>
+    <tr><td>"Add a summary of this session to today's daily note"</td><td>Appends to your daily log</td></tr>
+    <tr><td>"Find notes tagged #carrier from last month"</td><td>Searches and returns results</td></tr>
+    <tr><td>"Open the TELOS note in Obsidian"</td><td>Switches focus to that note in the app</td></tr>
+  </table></div>
+  <div class="co a"><strong>Token tip:</strong> Disable unused MCP connectors. Each idle MCP adds tool-listing overhead to every message. Toggle on/off in Claude's tools menu.</div>
 </section>
+
+<!-- SECTION 14 — HOTKEYS -->
 <section id="hotkeys">
   <h2><span class="num">14</span> Hotkeys</h2>
-  <div class="tw"><table><tr><th>Action</th><th>Shortcut</th></tr><tr><td>Open daily note</td><td><span class="ic">Cmd/Ctrl + Shift + D</span></td></tr><tr><td>Quick switcher</td><td><span class="ic">Cmd/Ctrl + O</span></td></tr><tr><td>Command palette</td><td><span class="ic">Cmd/Ctrl + P</span></td></tr><tr><td>Search all notes</td><td><span class="ic">Cmd/Ctrl + Shift + F</span></td></tr><tr><td>Toggle graph view</td><td><span class="ic">Cmd/Ctrl + G</span></td></tr></table></div>
+  <p><strong>Settings → Hotkeys</strong>. Mac = <span class="ic">Cmd</span> · Windows = <span class="ic">Ctrl</span>.</p>
+  <div class="tw"><table>
+    <tr><th>Action</th><th>Shortcut</th></tr>
+    <tr><td>Open daily note</td><td><span class="ic">Cmd/Ctrl + Shift + D</span></td></tr>
+    <tr><td>Quick switcher</td><td><span class="ic">Cmd/Ctrl + O</span></td></tr>
+    <tr><td>Command palette</td><td><span class="ic">Cmd/Ctrl + P</span></td></tr>
+    <tr><td>Search all notes</td><td><span class="ic">Cmd/Ctrl + Shift + F</span></td></tr>
+    <tr><td>QuickAdd: New SOP</td><td><span class="ic">Cmd/Ctrl + Shift + S</span></td></tr>
+    <tr><td>QuickAdd: New Prompt</td><td><span class="ic">Cmd/Ctrl + Shift + Q</span></td></tr>
+    <tr><td>Toggle graph view</td><td><span class="ic">Cmd/Ctrl + G</span></td></tr>
+  </table></div>
 </section>
+
+<!-- SECTION 15 — WORKFLOW -->
 <section id="workflow">
   <h2><span class="num">15</span> Daily workflow</h2>
   <h3>Capture → Process → Link</h3>
-  <p>The most common failure with any knowledge system is friction at capture time. Fix: <strong>everything goes to Inbox first, no exceptions.</strong></p>
-  <div class="g3"><div class="card"><div class="ct">1. Capture</div><div class="cb">Anything into <span class="ic">00-Inbox</span>. Zero friction.</div></div><div class="card"><div class="ct">2. Process</div><div class="cb">Once per day: move items to the right folder, add frontmatter.</div></div><div class="card"><div class="ct">3. Link</div><div class="cb">Every new note links to at least one existing note via <span class="ic">[[wikilinks]]</span>.</div></div></div>
+  <p>The most common failure with any knowledge system is friction at capture time. The fix: <strong>everything goes to Inbox first, no exceptions.</strong></p>
+  <div class="g3">
+    <div class="card"><div class="ct">1. Capture</div><div class="cb">Anything into <span class="ic">00-Inbox</span>. No tags, no folder decisions. Zero friction.</div></div>
+    <div class="card"><div class="ct">2. Process</div><div class="cb">Once per day: move items to the right folder, add frontmatter tags.</div></div>
+    <div class="card"><div class="ct">3. Link</div><div class="cb">Every new note links to at least one existing note via <span class="ic">[[wikilinks]]</span>.</div></div>
+  </div>
+
+  <h3>Daily note as operations log</h3>
+  <div class="card"><div class="cb"><ul>
+    <li>Task list and priorities for the day</li>
+    <li>Decision log — what was decided and why</li>
+    <li>Record of Claude sessions: topic, model used, outcome</li>
+    <li>Input for memory and TELOS updates when something significant changes</li>
+  </ul></div></div>
+
+  <h3>Prompt library discipline</h3>
+  <div class="card"><div class="cb">Every useful Claude prompt gets a note in <span class="ic">30-Library/Prompts/</span>:<ul>
+    <li>Exact prompt text — copy-paste ready</li>
+    <li>Model that gave the best result (Haiku / Sonnet / Opus)</li>
+    <li>Quality rating after real use (⭐ 1–5)</li>
+    <li>Notes on what variations improved output</li>
+    <li>Link added to <span class="ic">Prompt-Index.md</span></li>
+  </ul></div></div>
 </section>
+
+<!-- SECTION 16 — THEMES -->
 <section id="themes">
   <h2><span class="num">16</span> Recommended themes</h2>
-  <div class="g3"><div class="card"><div class="ct">Minimal ⭐</div><div class="cb">Best all-around. Pairs with Minimal Theme Settings plugin.</div></div><div class="card"><div class="ct">Things</div><div class="cb">Warmer, task-heavy daily use.</div></div><div class="card"><div class="ct">Catppuccin Mocha</div><div class="cb">Excellent dark mode contrast.</div></div></div>
+  <p><strong>Settings → Appearance → Manage community themes</strong></p>
+  <div class="g3">
+    <div class="card"><div class="ct">Minimal ⭐</div><div class="cb">Best all-around. Pairs with Minimal Theme Settings plugin for granular control.</div></div>
+    <div class="card"><div class="ct">Things</div><div class="cb">Warmer, task-heavy daily use. Great for operations-focused workflows.</div></div>
+    <div class="card"><div class="ct">Catppuccin Mocha</div><div class="cb">Excellent dark mode contrast for long sessions and low-light environments.</div></div>
+  </div>
 </section>
+
+<!-- CHECKLIST -->
 <section id="checklist">
   <h2><span class="num">✓</span> Quick-start checklist</h2>
   <p>Click each item to mark it complete.</p>
+
   <div class="cg">Claude setup</div>
-  <ul class="cl"><li><div class="chk" onclick="tog(this)"></div><span>Pick your default model (Sonnet for most tasks)</span></li><li><div class="chk" onclick="tog(this)"></div><span>Run the TELOS interview in Claude (Section 4, Option B)</span></li><li><div class="chk" onclick="tog(this)"></div><span>Create a Claude Project and paste your TELOS into the system prompt</span></li><li><div class="chk" onclick="tog(this)"></div><span>Test with a real ops task — refine TELOS based on output quality</span></li></ul>
+  <ul class="cl">
+    <li><div class="chk" onclick="tog(this)"></div><span>Identify your primary use case — pick your default model (Sonnet for most tasks)</span></li>
+    <li><div class="chk" onclick="tog(this)"></div><span>Run the TELOS interview in Claude (Section 4, Option B recommended)</span></li>
+    <li><div class="chk" onclick="tog(this)"></div><span>Create a Claude Project and paste your completed TELOS into the system prompt</span></li>
+    <li><div class="chk" onclick="tog(this)"></div><span>Test the project with a real ops task — refine TELOS based on output quality</span></li>
+  </ul>
+
   <div class="cg">Installation</div>
-  <ul class="cl"><li><div class="chk" onclick="tog(this)"></div><span>Install Obsidian</span></li><li><div class="chk" onclick="tog(this)"></div><span>Install Claude Desktop</span></li><li><div class="chk" onclick="tog(this)"></div><span>(Optional) Install Claude Code</span></li></ul>
+  <ul class="cl">
+    <li><div class="chk" onclick="tog(this)"></div><span>Install Node.js — <span class="ic">brew install node</span> / <span class="ic">winget install OpenJS.NodeJS.LTS</span></span></li>
+    <li><div class="chk" onclick="tog(this)"></div><span>Install Obsidian — <span class="ic">brew install --cask obsidian</span> / <span class="ic">winget install Obsidian.Obsidian</span></span></li>
+    <li><div class="chk" onclick="tog(this)"></div><span>Install Claude Desktop — <span class="ic">brew install --cask claude</span> / <span class="ic">winget install Anthropic.Claude</span></span></li>
+    <li><div class="chk" onclick="tog(this)"></div><span>(Optional) Install Claude Code — <span class="ic">npm install -g @anthropic-ai/claude-code</span></span></li>
+  </ul>
+
   <div class="cg">Vault setup</div>
-  <ul class="cl"><li><div class="chk" onclick="tog(this)"></div><span>Create vault and drop scaffold contents in</span></li><li><div class="chk" onclick="tog(this)"></div><span>Configure sync</span></li><li><div class="chk" onclick="tog(this)"></div><span>Core settings: new note location = <span class="ic">00-Inbox</span>, wikilinks on</span></li><li><div class="chk" onclick="tog(this)"></div><span>Community plugins: Templater, Obsidian Git, QuickAdd, Calendar</span></li></ul>
+  <ul class="cl">
+    <li><div class="chk" onclick="tog(this)"></div><span>Create vault and drop scaffold contents in</span></li>
+    <li><div class="chk" onclick="tog(this)"></div><span>Configure sync — iCloud · OneDrive · Obsidian Sync · Git</span></li>
+    <li><div class="chk" onclick="tog(this)"></div><span>Core settings: new note location = <span class="ic">00-Inbox</span>, wikilinks on</span></li>
+    <li><div class="chk" onclick="tog(this)"></div><span>Core plugins: Daily Notes, Templates, Backlinks, Quick Switcher</span></li>
+    <li><div class="chk" onclick="tog(this)"></div><span>Community plugins: Templater, Obsidian Git, QuickAdd, Calendar</span></li>
+    <li><div class="chk" onclick="tog(this)"></div><span>Daily Notes: template = <span class="ic">Templates/Daily-Note</span>, folder = <span class="ic">10-Daily</span></span></li>
+  </ul>
+
   <div class="cg">Claude + Obsidian integration</div>
-  <ul class="cl"><li><div class="chk" onclick="tog(this)"></div><span>Install Local REST API plugin, generate API key</span></li><li><div class="chk" onclick="tog(this)"></div><span>Edit Claude Desktop config and add obsidian-mcp-tools block</span></li><li><div class="chk" onclick="tog(this)"></div><span>Fully quit and restart Claude Desktop — confirm Obsidian tools appear</span></li></ul>
+  <ul class="cl">
+    <li><div class="chk" onclick="tog(this)"></div><span>Install Local REST API plugin, generate API key</span></li>
+    <li><div class="chk" onclick="tog(this)"></div><span>Edit Claude Desktop config file (Section 13 for OS-specific path)</span></li>
+    <li><div class="chk" onclick="tog(this)"></div><span>Add obsidian-mcp-tools block with API key and port <span class="ic">27123</span></span></li>
+    <li><div class="chk" onclick="tog(this)"></div><span>Fully quit and restart Claude Desktop — confirm Obsidian tools appear</span></li>
+  </ul>
+
+  <div class="cg">First use</div>
+  <ul class="cl">
+    <li><div class="chk" onclick="tog(this)"></div><span>Create your first daily note — log a task in it today</span></li>
+    <li><div class="chk" onclick="tog(this)"></div><span>Drop one real item into <span class="ic">00-Inbox</span> and process it to the right folder</span></li>
+    <li><div class="chk" onclick="tog(this)"></div><span>Add your first prompt entry to <span class="ic">30-Library/Prompts/</span></span></li>
+    <li><div class="chk" onclick="tog(this)"></div><span>Ask Claude via Obsidian MCP: "Add a summary of this setup to today's daily note"</span></li>
+  </ul>
 </section>
+
 <footer>
   <p>Claude + Obsidian Operations Field Guide · 3PL &amp; Operations Management Edition</p>
-  <p style="margin-top:6px;"><span style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:3px 10px;font-size:11px;font-family:var(--mono);color:var(--accent2);margin-right:8px;">v1.3</span><span style="font-size:12px;color:var(--muted);">Last updated: May 26, 2026 · Added Claude Design (research preview)</span></p>
+  <p style="margin-top:6px;">
+    <span style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:3px 10px;font-size:11px;font-family:var(--mono);color:var(--accent2);margin-right:8px;">v1.3</span>
+    <span style="font-size:12px;color:var(--muted);">Last updated: May 26, 2026 · Added Claude Design (research preview)</span>
+  </p>
+  <p style="margin-top:8px;font-size:12px;">Pair with the <strong>CDaze-Brain-Scaffold.zip</strong> vault starter for a complete ready-to-use setup.</p>
 </footer>
+
 </main>
 </div>
+
 <script>
-function sw(os,btn){['mac','win'].forEach(o=>{const p=document.getElementById('tp-'+o);if(p)p.classList.remove('active');});document.querySelectorAll('#install .tab').forEach(t=>t.classList.remove('active'));const p=document.getElementById('tp-'+os);if(p)p.classList.add('active');btn.classList.add('active');}
-function sw2(os,btn){['mac','win'].forEach(o=>{const p=document.getElementById('tp2-'+o);if(p)p.classList.remove('active');});btn.closest('.sb').querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));const p=document.getElementById('tp2-'+os);if(p)p.classList.add('active');btn.classList.add('active');}
-function tog(el){el.classList.toggle('done');el.closest('li').classList.toggle('di');}
-const secs=document.querySelectorAll('section[id]');const links=document.querySelectorAll('nav a');window.addEventListener('scroll',()=>{let cur='';secs.forEach(s=>{if(window.scrollY>=s.offsetTop-90)cur=s.id;});links.forEach(a=>{a.classList.remove('active');if(a.getAttribute('href')==='#'+cur)a.classList.add('active');});},{passive:true});
+function sw(os, btn) {
+  ['mac','win'].forEach(o => {
+    const p = document.getElementById('tp-' + o);
+    if(p) p.classList.remove('active');
+  });
+  document.querySelectorAll('#install .tab').forEach(t => t.classList.remove('active'));
+  const p = document.getElementById('tp-' + os);
+  if(p) p.classList.add('active');
+  btn.classList.add('active');
+}
+function sw2(os, btn) {
+  ['mac','win'].forEach(o => {
+    const p = document.getElementById('tp2-' + o);
+    if(p) p.classList.remove('active');
+  });
+  btn.closest('.sb').querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  const p = document.getElementById('tp2-' + os);
+  if(p) p.classList.add('active');
+  btn.classList.add('active');
+}
+function tog(el) {
+  el.classList.toggle('done');
+  el.closest('li').classList.toggle('di');
+}
+// nav scroll highlight
+const secs = document.querySelectorAll('section[id]');
+const links = document.querySelectorAll('nav a');
+window.addEventListener('scroll', () => {
+  let cur = '';
+  secs.forEach(s => { if(window.scrollY >= s.offsetTop - 90) cur = s.id; });
+  links.forEach(a => {
+    a.classList.remove('active');
+    if(a.getAttribute('href') === '#' + cur) a.classList.add('active');
+  });
+}, {passive:true});
 </script>
 </body>
 </html>

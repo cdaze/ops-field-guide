@@ -18,9 +18,10 @@ html{scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:15px;line-height:1.7;}
 
 /* ── LAYOUT ── */
-.shell{display:flex;min-height:100vh;}
-nav{width:250px;flex-shrink:0;background:var(--surface);border-right:1px solid var(--border);position:sticky;top:0;height:100vh;overflow-y:auto;padding:1.5rem 0 3rem;}
-main{flex:1;max-width:860px;padding:3rem 3rem 7rem;}
+html{scroll-padding-top:2rem;}
+body{display:flex;}
+nav{width:250px;min-width:250px;background:var(--surface);border-right:1px solid var(--border);position:sticky;top:0;height:100vh;overflow-y:auto;padding:1.5rem 0 3rem;flex-shrink:0;align-self:flex-start;}
+main{flex:1;min-width:0;padding:3rem 3rem 7rem;}
 
 /* ── NAV ── */
 .nav-logo{padding:0 1.25rem 1.5rem;border-bottom:1px solid var(--border);margin-bottom:0.75rem;}
@@ -38,7 +39,8 @@ nav a:hover,nav a.active{color:var(--text);background:var(--surface2);border-lef
 .hero h1 em{color:var(--accent);font-style:normal;}
 .hero p{font-size:15px;color:var(--muted);max-width:580px;line-height:1.65;}
 .pills{display:flex;flex-wrap:wrap;gap:7px;margin-top:1.25rem;}
-.pill{background:var(--surface2);border:1px solid var(--border);border-radius:20px;padding:3px 11px;font-size:12px;color:var(--muted);}
+.pill{background:var(--surface2);border:1px solid var(--border);border-radius:20px;padding:3px 11px;font-size:12px;color:var(--muted);text-decoration:none;transition:all 0.15s;cursor:pointer;}
+.pill:hover{color:var(--text);border-color:var(--accent);background:rgba(91,138,245,0.08);}
 
 /* ── SECTIONS ── */
 section{margin-bottom:4rem;scroll-margin-top:2rem;}
@@ -174,6 +176,7 @@ tr:last-child td{border-bottom:none;}
 footer{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border);font-size:12px;color:var(--muted);}
 
 @media(max-width:768px){
+  body{display:block;}
   nav{display:none;}
   main{padding:2rem 1.25rem 4rem;}
   h2{font-size:18px;}
@@ -181,7 +184,6 @@ footer{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border);font-
 </style>
 </head>
 <body>
-<div class="shell">
 
 <!-- ════════ SIDEBAR ════════ -->
 <nav id="sidebar">
@@ -221,15 +223,15 @@ footer{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border);font-
   <h1>Claude + Obsidian<br><em>Operations Field Guide</em></h1>
   <p>Everything in one place — which Claude model and agent to use, how to manage tokens and context, building your TELOS, and setting up Obsidian as your persistent knowledge base alongside Claude.</p>
   <div class="pills">
-    <span class="pill">Models &amp; agents</span>
-    <span class="pill">Claude Design</span>
-    <span class="pill">Skills &amp; CLI</span>
-    <span class="pill">Token strategy</span>
-    <span class="pill">TELOS</span>
-    <span class="pill">Projects &amp; artifacts</span>
-    <span class="pill">macOS</span>
-    <span class="pill">Windows 11</span>
-    <span class="pill">MCP integration</span>
+    <a href="#models" class="pill">Models &amp; agents</a>
+    <a href="#models" class="pill">Claude Design</a>
+    <a href="#skills" class="pill">Skills &amp; CLI</a>
+    <a href="#tokens" class="pill">Token strategy</a>
+    <a href="#telos" class="pill">TELOS</a>
+    <a href="#projects" class="pill">Projects &amp; artifacts</a>
+    <a href="#install" class="pill">macOS</a>
+    <a href="#install" class="pill">Windows 11</a>
+    <a href="#mcp" class="pill">MCP integration</a>
   </div>
 </div>
 
@@ -705,7 +707,7 @@ ready to paste into a Claude Project system prompt.</code><span class="lt">promp
       <tr><td><strong>Obsidian vault (iCloud)</strong></td><td><span class="ic">~/Library/Mobile Documents/iCloud~md~obsidian/Documents/</span></td></tr>
       <tr><td><strong>Obsidian vault (local)</strong></td><td><span class="ic">~/Documents/</span> or any folder you choose</td></tr>
     </table></div>
-    <div class="co g"><strong>iCloud tip:</strong> Create the vault inside the iCloud path above — it syncs automatically to iPhone/iPad via the Obsidian iOS app.</div>
+    <div class="co a"><strong>iCloud caution:</strong> iCloud works for Mac-only single-device use but has documented sync conflicts and silent data loss when used across multiple devices or with Windows. If you're on Mac + iOS only and working from one machine, it's fine. Otherwise use Obsidian Sync or Git.</div>
     <div class="co a"><strong>Gatekeeper:</strong> If macOS blocks first launch, go to System Settings → Privacy &amp; Security → Open Anyway. One-time step.</div>
   </div>
 
@@ -743,13 +745,14 @@ ready to paste into a Claude Project system prompt.</code><span class="lt">promp
 
   <h3>Sync — choose one</h3>
   <div class="tw"><table>
-    <tr><th>Option</th><th>Cost</th><th>Best for</th></tr>
-    <tr><td><strong>Obsidian Sync</strong> <span class="rec">recommended</span></td><td>$8/mo</td><td>Simplest, end-to-end encrypted, all platforms</td></tr>
-    <tr><td><strong>iCloud</strong></td><td>Included</td><td>macOS + iOS only — zero setup</td></tr>
-    <tr><td><strong>OneDrive</strong></td><td>Included w/ M365</td><td>Windows + Android</td></tr>
-    <tr><td><strong>Dropbox</strong></td><td>Free tier / paid</td><td>Cross-platform, widely supported</td></tr>
-    <tr><td><strong>Git (GitHub)</strong></td><td>Free</td><td>Teams, full version history, pairs with Obsidian Git plugin</td></tr>
+    <tr><th>Option</th><th>Cost</th><th>Verdict</th></tr>
+    <tr><td><strong>Obsidian Sync</strong> <span class="rec">recommended</span></td><td>$8/mo</td><td>Simplest, end-to-end encrypted, all platforms. Built for Obsidian — handles plugin settings, themes, and mobile reliably.</td></tr>
+    <tr><td><strong>Git (GitHub)</strong> <span class="rec">best free option</span></td><td>Free</td><td>Full version history, works on Mac + Windows + mobile (via Working Copy on iOS). Pairs with Obsidian Git plugin for auto-commit. Most reliable free option.</td></tr>
+    <tr><td><strong>OneDrive</strong></td><td>Included w/ M365</td><td>Solid on Windows + Android. Avoid for Mac/Windows cross-platform vaults — known conflict issues similar to iCloud.</td></tr>
+    <tr><td><strong>Dropbox</strong></td><td>Free tier / paid</td><td>More reliable than iCloud or OneDrive for cross-platform use. Free tier limited to 3 devices.</td></tr>
+    <tr><td><strong>iCloud</strong> ⚠️</td><td>Included</td><td><strong>Mac + iOS only — and even then, use with caution.</strong> Known issues: files silently overwritten on conflict, sync freezes, data loss reported on the Obsidian forum. If you stay Mac-only and single-device, it works. The moment you add Windows or edit on multiple devices, switch to Obsidian Sync or Git.</td></tr>
   </table></div>
+  <div class="co a"><strong>iCloud warning:</strong> The Obsidian community forums have documented silent data loss when iCloud conflicts occur — one version silently overwrites the other with no warning. If your vault contains anything you can't afford to lose, use Obsidian Sync or Git instead. iCloud is fine for casual Mac-only single-device use, but not recommended for serious workflows.</div>
 </section>
 
 <!-- SECTION 8 — VAULT -->
@@ -757,8 +760,10 @@ ready to paste into a Claude Project system prompt.</code><span class="lt">promp
   <h2><span class="num">8</span> Create your vault</h2>
   <div class="steps">
     <div class="step"><div class="sn">1</div><div class="sb"><strong>Open Obsidian → Create new vault</strong>Name it: <span class="ic">Ops-Brain</span>, <span class="ic">3PL-Hub</span>, or your company name.</div></div>
-    <div class="step"><div class="sn">2</div><div class="sb"><strong>Choose your sync location</strong>Point the vault folder at your iCloud, OneDrive, or Obsidian Sync path.</div></div>
-    <div class="step"><div class="sn">3</div><div class="sb"><strong>Drop the scaffold in</strong>Unzip <span class="ic">CDaze-Brain-Scaffold.zip</span> and copy its contents into the vault root. Obsidian picks everything up immediately.</div></div>
+    <div class="step"><div class="sn">2</div><div class="sb"><strong>Choose your sync location</strong>Obsidian Sync or Git recommended. Avoid iCloud for multi-device or cross-platform setups — see sync table in Section 7.</div></div>
+    <div class="step"><div class="sn">3</div><div class="sb"><strong>Drop the scaffold in</strong>Unzip <span class="ic">CDaze-Brain-Scaffold.zip</span> and copy its contents into the vault root. Obsidian picks everything up immediately.
+      <div class="co" style="margin-top:8px;">📬 <strong>The scaffold is not hosted here.</strong> Contact the guide author to request the <span class="ic">CDaze-Brain-Scaffold.zip</span> starter kit — it includes all folder structure, templates, TELOS prompt, memory log, and example SOPs ready to drop in.</div>
+    </div></div>
   </div>
 </section>
 
@@ -990,7 +995,7 @@ code "$env:APPDATA\Claude\claude_desktop_config.json"</code><span class="lt">pow
   <div class="cg">Vault setup</div>
   <ul class="cl">
     <li><div class="chk" onclick="tog(this)"></div><span>Create vault and drop scaffold contents in</span></li>
-    <li><div class="chk" onclick="tog(this)"></div><span>Configure sync — iCloud · OneDrive · Obsidian Sync · Git</span></li>
+    <li><div class="chk" onclick="tog(this)"></div><span>Configure sync — Obsidian Sync or Git recommended · OneDrive/Dropbox acceptable · iCloud only if Mac-only single device</span></li>
     <li><div class="chk" onclick="tog(this)"></div><span>Core settings: new note location = <span class="ic">00-Inbox</span>, wikilinks on</span></li>
     <li><div class="chk" onclick="tog(this)"></div><span>Core plugins: Daily Notes, Templates, Backlinks, Quick Switcher</span></li>
     <li><div class="chk" onclick="tog(this)"></div><span>Community plugins: Templater, Obsidian Git, QuickAdd, Calendar</span></li>
@@ -1020,11 +1025,10 @@ code "$env:APPDATA\Claude\claude_desktop_config.json"</code><span class="lt">pow
     <span style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:3px 10px;font-size:11px;font-family:var(--mono);color:var(--accent2);margin-right:8px;">v1.3</span>
     <span style="font-size:12px;color:var(--muted);">Last updated: May 26, 2026 · Added Claude Design (research preview)</span>
   </p>
-  <p style="margin-top:8px;font-size:12px;">Pair with the <strong>CDaze-Brain-Scaffold.zip</strong> vault starter for a complete ready-to-use setup.</p>
+  <p style="margin-top:8px;font-size:12px;">📬 The <strong>CDaze-Brain-Scaffold.zip</strong> vault starter is not hosted here — contact the guide author to request it.</p>
 </footer>
 
 </main>
-</div>
 
 <script>
 function sw(os, btn) {
